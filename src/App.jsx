@@ -9,7 +9,7 @@ import LandonMemorial from "./pages/LandonMemorial";
 
 function App() {
   return (
-    <HashRouter>
+    <HashRouter basename="/rabern">
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/research" element={<Research />} />
