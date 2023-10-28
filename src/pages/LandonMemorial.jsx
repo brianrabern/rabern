@@ -149,7 +149,7 @@ const LandonMemorial = () => {
 
         <div className="card bg-gray-300 m-4">
           <div className="card-body">
-            <p className="text-md ml-4 text-base-300">
+            <p className="text-md ml-4 text-justify text-base-300">
               Landon Rabern (May 07, 1981 - October 19, 2020) was a
               mathematician and software engineer. He was most well-known for
               his work on the Borodin-Kostochka conjecture and related topics in
@@ -160,7 +160,7 @@ const LandonMemorial = () => {
               alt="graph"
               className="rounded-lg max-w-xs" // Set the image to float left and add some margin
             />
-            <p className="text-sm ml-4 text-base-300">
+            <p className="text-sm ml-4 text-justify text-base-300">
               Landon was born and raised in Roseburg, Oregon. As a child he
               developed a deep interest in computers, machine intelligence, and
               science fiction. Starting in the 1980s with a Commodore 64, and

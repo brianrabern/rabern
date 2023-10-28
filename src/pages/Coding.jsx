@@ -113,7 +113,7 @@ export default function Coding() {
               </li>
               <li>
                 <div className="tooltip" data-tip="résumé">
-                  <Link to="/resume">
+                  <Link to="/coding/resume/">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
@@ -160,25 +160,16 @@ export default function Coding() {
               </code>
             </h3>
             <p className="text-lg leading-8 text-accent">
-              As a software engineer with an enthusiasm for advanced
+              As a software developer, I bring a distinctive blend of
+              interpersonal, technical, and problem-solving skills, honed
+              through my background as a philosophy and logic pro- fessor.
+              {/* As a software engineer with an enthusiasm for advanced
               technologies, I offer a distinctive combination of skills derived
               from my background as a philosophy and logic professor. Combining
               analytical rigor with an innovative mindset, I fearlessly tackle
               engineering challenges, exploring alternative possibilities to
               develop products that transcend mere functionality, deeply
-              resonating with users.
-              {/* Drawing from a decade of experience as a philosophy and logic
-                professor employing formal methods for modeling meaning and human
-                communication, I approach engineering challenges with a blend of
-                analytical rigor and an innovative mindset. Fearlessly exploring
-                alternative possibilities, this distinct perspective enables me to
-                develop products that transcend mere functionality, deeply
-                resonating with users. */}
-              {/* With ten years of experience as a philosophy and logic professor
-                using formal methods to model meaning and human communication, I'm
-                now applying my skills to the technology sector. I bring a unique
-                perspective to the development process where I create products
-                that are not only functional but also deeply meaningful to users. */}
+              resonating with users. */}
             </p>
           </div>
 

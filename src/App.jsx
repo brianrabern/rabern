@@ -6,14 +6,23 @@ import Resume from "./pages/Resume";
 import ResumePdf from "./pages/ResumePdf";
 import LandonResearch from "./pages/LandonResearch";
 import LandonMemorial from "./pages/LandonMemorial";
+import Research from "./pages/Research";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    // set default theme
+    const currentTheme = localStorage.getItem("theme");
+    if (!currentTheme) {
+      localStorage.setItem("theme", "dark");
+    }
+  }, []);
   return (
-    <HashRouter basename="/rabern">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/research" element={<Research />} />
-        <Route path="/talks" element={<Talks />} />
+        <Route path="/research" element={<Research />} />
+        {/* <Route path="/talks" element={<Talks />} />
         <Route path="/teaching" element={<Teaching />} /> */}
 
         <Route path="/coding" element={<Coding />} />

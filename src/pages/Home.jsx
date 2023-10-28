@@ -22,10 +22,13 @@ import {
   SiFirebase,
   SiNextdotjs,
 } from "react-icons/si";
+import { RiTwitterXFill } from "react-icons/ri";
+
 import { FaCss3 } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
 import bdr2 from "./bdr2.png";
+import bdr21a from "./bdr21a.jpeg";
 import { themeChange } from "theme-change";
 import { useEffect } from "react";
 
@@ -115,70 +118,104 @@ export default function Home() {
                 </div>
               </li>
               <li>
-                <div className="tooltip" data-tip="résumé">
-                  <Link to="/resume">
+                <div className="tooltip" data-tip="writing">
+                  <Link to="/research/">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
                       fill="none"
                       viewBox="0 0 24 24"
+                      strokeWidth={1.5}
                       stroke="currentColor"
+                      className="w-6 h-6"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </li>
+              <li>
+                <div className="tooltip" data-tip="coding">
+                  <Link to="/coding/">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </li>
+              <li>
+                <div className="tooltip" data-tip="talking">
+                  <Link to="/talking/">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"
                       />
                     </svg>
                   </Link>
                 </div>
               </li>
             </ul>
-            {/* <ul className="flex">
-              <li className="bg-secondary px-4 py-2 rounded-full ml-8 text-sm text-default">
-                <Link to="/resume">resume</Link>
-              </li>
-            </ul> */}
           </nav>
           <div className="text-center p-10">
-            <h2 className="text-5xl py-2 text-primary font-medium">
+            {/* <h2 className="text-5xl py-2 text-primary font-medium">
               Brian Rabern
-            </h2>
-            <h3 className="text-xl py-2">
-              <code className="h-10 flex items-center justify-center text-info">
+            </h2> */}
+            <h3 className="text-4xl text-primary font-medium py-2">
+              <code className="h-10 flex items-center justify-center">
                 <Typewriter
                   onInit={(typewriter) => {
                     typewriter
 
-                      .typeString("running code...")
+                      .typeString("01100010 01110010 ")
 
-                      .pauseFor(1000)
+                      .pauseFor(600)
                       .deleteAll()
-                      .typeString("")
-                      .deleteAll()
+                      .typeString("Brian Rabern")
+
                       .start();
                   }}
                 />
               </code>
             </h3>
             <p className="text-lg leading-8 text-accent">
-              I'm a professor and fullstack developer. I like puzzles and
-              paradoxes, and like to write code and play with technology. My
-              research centers around natural language and logic. And my tech
-              interests include Python, and JavaScript/React.
+              I'm a professor, writer, and fullstack developer. I like to write
+              code and play with technology; I like logic puzzles, paradoxes,
+              and formal philosophy. My research centers around natural language
+              semantics and logic. And my tech interests include artifical
+              intelligence, virtual reality, Python, and JavaScript/React.
             </p>
           </div>
 
           <div className="flex relative bg-base-300 rounded-full w-62 h-40 overflow-hidden">
-            <img src={bdr2} alt="Brian Rabern" />{" "}
-            <div className="px-10 text-4xl flex flex-wrap justify-center items-center gap-4 py-3 text-accent">
+            <img src={bdr21a} alt="Brian Rabern" />{" "}
+            <div className="px-10 text-3xl flex flex-wrap justify-center items-center gap-4 py-3 text-accent">
               <a href="https://github.com/brianrabern">
                 <AiFillGithub className="hover:text-purple-500" />
               </a>
-              <a href="https://gitlab.com/brianrabern">
-                <AiFillGitlab className="hover:text-warning" />
-              </a>
+
               <a href="https://linkedin.com/in/brian-rabern">
                 {" "}
                 <AiFillLinkedin className="hover:text-blue-500" />
@@ -187,223 +224,23 @@ export default function Home() {
                 <SiGooglescholar className="hover:text-green-500" />
               </a>
               <a href="https://twitter.com/brian_rabern">
-                <AiFillTwitterCircle className="hover:text-info" />
+                <RiTwitterXFill className="hover:text-info" />
               </a>
             </div>
           </div>
         </section>
 
-        <section className="mt-8">
-          <div>
-            <h3 className="text-2xl py-2">
-              <code className="h-10 flex items-center justify-center text-info">
-                <Typewriter
-                  onInit={(typewriter) => {
-                    typewriter
-
-                      .pauseFor(5000)
-                      .deleteAll()
-                      .typeString("projects")
-
-                      .start();
-                  }}
-                />
-              </code>
-            </h3>
-
-            <p className="flex items-center justify-center py-2 text-lg leading-8 text-accent mb-3">
-              Below are some of the projects I've worked on recently.
-            </p>
-          </div>
-
-          <div className="flex items-center justify-center">
-            <MdSwipe
-              style={{ transform: "rotate(180deg)" }}
-              className=" text-3xl text-accent"
-            />
-          </div>
-          {/* <div className="tooltip" data-tip="swipe left/right"> */}
-          <div className="carousel w-full">
-            <div id="item1" className="carousel-item w-full h-full">
-              <div className="justify-center text-center shadow-lg p-10 rounded-xl my-10 bg-primary flex-1">
-                <div className="tooltip" data-tip="swipe left/right">
-                  <h3 className="text-default text-2xl font-medium pb-2">
-                    MunroGo
-                  </h3>
-                </div>
-                <div className="mb-2 text-default">
-                  [<a href="https://gitlab.com/elijahram/munro-go">code</a>] [
-                  <a href="https://elijahram.gitlab.io/munro-go">live</a>]
-                </div>
-                <iframe
-                  src="https://www.youtube.com/embed/WH_QtAKQunQ"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  title="munro-go"
-                  allowFullScreen
-                  className="w-full h-80 lg:h-[42rem]"
-                ></iframe>
-
-                <p className="py-2 text-default mt-3">
-                  A mountain-climbing app that allows users to log and track
-                  climbs and statistics using FastAPI and React.
-                </p>
-                <div className="justify-end items-center text-2xl flex space-x-4 text-default flex-wrap mt-3">
-                  <SiPython />
-                  <SiJavascript />
-                  <SiMongodb />
-                  <SiFastapi />
-                  <SiReact />
-                  <SiRedux />
-                  <SiTailwindcss />
-                  <SiDaisyui />
-                </div>
-              </div>
-            </div>
-            <div id="item1.5" className="carousel-item w-full h-full">
-              <div className="justify-center text-center shadow-lg p-10 rounded-xl my-10 bg-primary flex-1">
-                <div className="tooltip" data-tip="swipe left/right">
-                  <h3 className="text-default text-2xl font-medium pb-2">
-                    symbolify_it
-                  </h3>
-                </div>
-                <div className="mb-2 text-default">
-                  [
-                  <a href="https://github.com/brianrabern/symbolizations">
-                    code
-                  </a>
-                  ] [<a href="https://symbolizations.vercel.app/">live</a>]
-                </div>
-                <iframe
-                  src="https://youtube.com/embed/H7TNHlLP9AQ"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  title="symbolify_it"
-                  allowFullScreen
-                  className="w-full h-80 lg:h-[42rem]"
-                ></iframe>
-
-                <p className="py-2 text-default mt-3">
-                  Enables users to practice their logic symbolization skills by
-                  translating English sentences into the corresponding formal
-                  language representations.
-                </p>
-                <div className="justify-end items-center text-2xl flex space-x-4 text-default flex-wrap mt-3">
-                  <SiNextdotjs />
-                  <SiReact />
-                  <SiTypescript />
-                  <SiPython />
-                  <SiTailwindcss />
-                </div>
-              </div>
-            </div>
-            <div id="item2" className="carousel-item w-full h-full">
-              <div className="justify-center text-center shadow-lg p-10 rounded-xl my-10  bg-primary flex-1">
-                <h3 className="text-default text-2xl font-medium pb-2">
-                  vennPlayground
-                </h3>
-                <div className="mb-2 text-default">
-                  [
-                  <a href="https://github.com/brianrabern/vennPlayground">
-                    code
-                  </a>
-                  ] [
-                  <a href="https://brianrabern.github.io/vennPlayground/">
-                    live
-                  </a>
-                  ]
-                </div>
-                <iframe
-                  src="https://youtube.com/embed/WQIxw2IvQTI"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  title="vennPlayground"
-                  allowFullScreen
-                  className="w-full h-80 lg:h-[42rem]"
-                ></iframe>
-
-                <p className="py-2 text-default mt-3">
-                  An interface for generating and semantically evaluating Venn
-                  Diagrams utilizing React components and SVG technology.
-                </p>
-                <div className="justify-end items-center text-2xl flex space-x-4 text-default flex-wrap mt-3">
-                  <SiSvg />
-                  <SiJavascript />
-                  <SiHtml5 />
-                  <FaCss3 />
-                  <SiBootstrap />
-                  <SiReact />
-                </div>
-              </div>
-            </div>
-            <div id="item3" className="carousel-item w-full h-full">
-              <div className="justify-center text-center shadow-lg p-10 rounded-xl my-10  bg-primary flex-1">
-                <h3 className="text-default text-2xl font-medium pb-2">
-                  Hofstadter's MU Playground
-                </h3>
-                <div className="mb-2 text-default">
-                  [<a href="https://mu-playground.brianrabern.net/">live</a>]
-                </div>
-                <iframe
-                  src="https://youtube.com/embed/bu6oVyBziM0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  title="mu"
-                  allowFullScreen
-                  className="w-full h-80 lg:h-[42rem]"
-                ></iframe>
-
-                <p className="py-2 text-default mt-3">
-                  A user-friendly interface implementing the logic for
-                  Hofstadter's proof system employing React components.
-                </p>
-                <div className="justify-end items-center text-2xl flex space-x-4 text-default flex-wrap mt-3">
-                  <SiReact />
-                  <SiJavascript />
-                  <SiHtml5 />
-                  <FaCss3 />
-                </div>
-              </div>
-            </div>
-            <div id="item4" className="carousel-item w-full h-full">
-              <div className="justify-center text-center shadow-lg p-10 rounded-xl my-10  bg-primary flex-1">
-                <h3 className="text-default text-2xl font-medium pb-2">
-                  Elogic
-                </h3>
-                <div className="mb-2 text-default">
-                  [<a href="https://info.elogic.land/">license info</a>]
-                </div>
-                <iframe
-                  src="https://youtube.com/embed/vuYXTmYnnaw"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  title="elogic"
-                  allowFullScreen
-                  className="w-full h-80 lg:h-[42rem]"
-                ></iframe>
-
-                <p className="py-2 text-default mt-3">
-                  A web-based application for teaching the syntax and semantics
-                  of first-order logic with multiple exersices and automatic
-                  grading.
-                </p>
-                <div className="justify-end items-center text-2xl flex space-x-4 text-default flex-wrap mt-3">
-                  <SiTypescript />
-                  <SiReact />
-                  <SiTailwindcss />
-                  <SiFirebase />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* </div> */}
-        </section>
-        <div className="flex items-center justify-center mb-12">
-          <Link to="/resume">
-            <button className="btn btn-wide rounded bg-primary text-black hover:bg-secondary border-0">
-              résumé
-            </button>
-          </Link>
-        </div>
+        <div className="flex items-center justify-center mb-12"></div>
       </main>
       <footer className="footer footer-center p-4 bg-base-300 text-base-content">
         <div>
           <p>© 2023 rabern - brian.rabern@gmail.com</p>
+          <p className="text-gray-600">
+            <Link to="/landon/memorial/">
+              {" "}
+              In Memoriam: Landon Rabern (1981-2020)
+            </Link>
+          </p>
         </div>
       </footer>
     </>

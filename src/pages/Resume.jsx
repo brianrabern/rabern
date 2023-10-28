@@ -45,7 +45,7 @@ const Resume = () => {
   const [isExpandedLinks, setIsExpandedLinks] = useState(false);
 
   function togglePdf() {
-    navigate("/resumepdf");
+    navigate("/coding/resume/resumepdf");
   }
   const handleClick = () => {
     setIsExpandedTech(!isExpandedTech);
@@ -109,7 +109,7 @@ const Resume = () => {
           <ul className="menu menu-horizontal bg-base-100 rounded-box">
             <li>
               <div className="tooltip" data-tip="home">
-                <Link to="/">
+                <Link to="/coding">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -130,7 +130,7 @@ const Resume = () => {
             <li>
               <div className="tooltip" data-tip="résumé">
                 {" "}
-                <Link to="/resume">
+                <Link to="/coding/resume">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"

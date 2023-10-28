@@ -12,7 +12,7 @@ const ResumePdf = () => {
   }, []);
 
   function togglePdf() {
-    navigate("/resume");
+    navigate("/coding/resume");
   }
 
   return (
