@@ -36,7 +36,7 @@ export default function Home() {
                 />
               </code>
             </h3>
-            <p className="text-lg leading-8 text-accent">
+            <p className="mt-2 text-lg leading-8 text-accent">
               I'm a teacher, researcher, and software developer. I like to write
               code and play with technology; I like logic puzzles, paradoxes,
               and formal philosophy. My research centers around natural language
@@ -57,11 +57,14 @@ export default function Home() {
                 {" "}
                 <AiFillLinkedin className="hover:text-blue-500" />
               </a>
-              <a href="https://scholar.google.com/citations?user=vzRA2EMAAAAJ&hl=en">
-                <SiGooglescholar className="hover:text-green-500" />
-              </a>
               <a href="https://twitter.com/brian_rabern">
                 <RiTwitterXFill className="hover:text-info" />
+              </a>
+              <a
+                href="https://scholar.google.com/citations?user=vzRA2EMAAAAJ&hl=en"
+                className="hidden sm:block"
+              >
+                <SiGooglescholar className="hover:text-green-500" />
               </a>
             </div>
           </div>
