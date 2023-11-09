@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/rabern/static/css/main.7da5ff03.css",
-    "main.js": "/rabern/static/js/main.ea4704bd.js",
+    "main.css": "/rabern/static/css/main.ddf3e431.css",
+    "main.js": "/rabern/static/js/main.ca394c3a.js",
     "static/media/photo3.jpeg": "/rabern/static/media/photo3.75e2dbee3c47733de03b.jpeg",
     "static/media/bdr2.png": "/rabern/static/media/bdr2.0fdef6d04d318c721442.png",
     "static/media/photo2.jpeg": "/rabern/static/media/photo2.636fbabdc56ac9bd2a17.jpeg",
@@ -37,11 +37,11 @@
     "static/media/photo6.jpeg": "/rabern/static/media/photo6.80abf4bb9e3b5efde7ff.jpeg",
     "static/media/photo7.jpeg": "/rabern/static/media/photo7.41fabd6ce955ed251c23.jpeg",
     "index.html": "/rabern/index.html",
-    "main.7da5ff03.css.map": "/rabern/static/css/main.7da5ff03.css.map",
-    "main.ea4704bd.js.map": "/rabern/static/js/main.ea4704bd.js.map"
+    "main.ddf3e431.css.map": "/rabern/static/css/main.ddf3e431.css.map",
+    "main.ca394c3a.js.map": "/rabern/static/js/main.ca394c3a.js.map"
   },
   "entrypoints": [
-    "static/css/main.7da5ff03.css",
-    "static/js/main.ea4704bd.js"
+    "static/css/main.ddf3e431.css",
+    "static/js/main.ca394c3a.js"
   ]
 }
