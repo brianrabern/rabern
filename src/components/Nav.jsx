@@ -4,7 +4,7 @@ export default function Nav() {
   return (
     <nav className="py-8 mb-12 flex justify-between items-center">
       <div className="tooltip" data-tip="mood?">
-        <ul className="justify-end">
+        <ul className="menu justify-end">
           <li>
             {" "}
             <input
@@ -15,13 +15,13 @@ export default function Nav() {
               className="radio"
               id="business-radio"
             />
-            <input
+            {/* <input
               data-set-theme="coffee"
               data-act-class="ACTIVECLASS"
               type="radio"
               name="theme"
               className="radio"
-            />
+            /> */}
             <input
               data-set-theme="dark"
               data-act-class="ACTIVECLASS"
@@ -29,13 +29,13 @@ export default function Nav() {
               name="theme"
               className="radio"
             />
-            <input
+            {/* <input
               data-set-theme="black"
               data-act-class="ACTIVECLASS"
               type="radio"
               name="theme"
               className="radio"
-            />
+            /> */}
             <input
               data-set-theme="cyberpunk"
               data-act-class="ACTIVECLASS"
