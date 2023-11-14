@@ -16,10 +16,10 @@ const LandonResearch = () => {
   useEffect(() => {
     themeChange(false);
   }, []);
-  useEffect(() => {
-    // set default theme on this page
-    localStorage.setItem("theme", "dark");
-  }, []);
+  // useEffect(() => {
+  //   // set default theme on this page
+  //   localStorage.setItem("theme", "dark");
+  // }, []);
 
   return (
     <main>

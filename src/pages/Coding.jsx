@@ -11,10 +11,10 @@ const Coding = () => {
   useEffect(() => {
     themeChange(false);
   }, []);
-  useEffect(() => {
-    // set default theme on this page
-    localStorage.setItem("theme", "bumblebee");
-  }, []);
+  // useEffect(() => {
+  //   // set default theme on this page
+  //   localStorage.setItem("theme", "bumblebee");
+  // }, []);
 
   return (
     <main>

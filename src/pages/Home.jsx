@@ -12,10 +12,10 @@ export default function Home() {
   useEffect(() => {
     themeChange(false);
   }, []);
-  useEffect(() => {
-    // set default theme on this page
-    localStorage.setItem("theme", "bumblebee");
-  }, []);
+  // useEffect(() => {
+  //   // set default theme on this page
+  //   localStorage.setItem("theme", "bumblebee");
+  // }, []);
   return (
     <>
       <main className="px-10">

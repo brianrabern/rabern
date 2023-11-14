@@ -21,10 +21,10 @@ const Research = () => {
     themeChange(false);
     window.scrollTo(0, 0);
   }, []);
-  useEffect(() => {
-    // set default theme on this page
-    localStorage.setItem("theme", "dark");
-  }, []);
+  //   useEffect(() => {
+  //     // set default theme on this page
+  //     localStorage.setItem("theme", "dark");
+  //   }, []);
 
   const [toggle, setToggle] = useState(false);
 
