@@ -1,3 +1,5 @@
+//using the philpaper widget
+
 import React from "react";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
@@ -9,10 +11,6 @@ const Research = () => {
   useEffect(() => {
     themeChange(false);
   }, []);
-  // useEffect(() => {
-  //   // set default theme on this page
-  //   localStorage.setItem("theme", "bumblebee");
-  // }, []);
 
   return (
     <main>

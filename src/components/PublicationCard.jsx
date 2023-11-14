@@ -20,7 +20,10 @@ const PublicationCard = ({ publication }) => {
               {publication.journal}
             </p>
             <p className="text-md ml-4 text-base-content">
-              ({publication?.year}), {publication?.volume}, {publication?.pages}
+              {publication?.year && `(${publication.year})`}
+              {publication?.volume && `, ${publication.volume}`}
+              {publication?.number && `(${publication.number})`}
+              {publication?.pages && `, ${publication.pages}`}
             </p>
           </>
         )}

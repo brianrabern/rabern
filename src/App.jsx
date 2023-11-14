@@ -5,7 +5,8 @@ import Resume from "./pages/Resume";
 import ResumePdf from "./pages/ResumePdf";
 import LandonResearch from "./pages/LandonResearch";
 import LandonMemorial from "./pages/LandonMemorial";
-import Research from "./pages/Research";
+// import Research from "./pages/Research";
+import ResearchB from "./pages/ResearchB";
 import Coding from "./pages/Coding";
 import Talking from "./pages/Talking";
 import { useEffect } from "react";
@@ -23,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/research" element={<Research />} />
+        <Route path="/research" element={<ResearchB />} />
         {/* <Route path="/talks" element={<Talks />} />
         <Route path="/teaching" element={<Teaching />} /> */}
         <Route path="/talking" element={<Talking />} />

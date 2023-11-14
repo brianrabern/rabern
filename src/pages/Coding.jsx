@@ -2,7 +2,10 @@ import React from "react";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
 import Nav from "../components/Nav.jsx";
+import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
+import echo from "./assets/echo.png";
+import venn1 from "./assets/venn1.png";
 
 const Coding = () => {
   useEffect(() => {
@@ -36,9 +39,43 @@ const Coding = () => {
         </h3>
       </section>
       <p>
-        under construction...{" "}
-        <a href="https://github.com/brianrabern">GitHub</a>
+        under construction... <Link to="/coding/resume/">Resume</Link>
       </p>
+
+      <div className="flex">
+        <div className="ml-3 mr-3 card w-96 bg-base-100 shadow-xl flex-1">
+          <figure>
+            <img src={echo} alt="Shoes" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">
+              Shoes!
+              <div className="badge badge-secondary">NEW</div>
+            </h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div className="card-actions justify-end">
+              <div className="badge badge-outline">Fashion</div>
+              <div className="badge badge-outline">Products</div>
+            </div>
+          </div>
+        </div>
+        <div className="ml-3 mr-3 card w-96 bg-base-100 shadow-xl flex-1">
+          <figure>
+            <img src={venn1} alt="Shoes" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">
+              Shoes!
+              <div className="badge badge-secondary">NEW</div>
+            </h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div className="card-actions justify-end">
+              <div className="badge badge-outline">Fashion</div>
+              <div className="badge badge-outline">Products</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 };

@@ -52,18 +52,19 @@ const Talking = () => {
             type="checkbox"
             className="toggle toggle-secondary"
             onClick={toggleIt}
+            defaultChecked
           />
           <p className="px-1 text-xl  text-gray-600">presentations</p>
         </label>
       </div>
-      {toggle && (
+      {!toggle && (
         <div>
           {talks.map((talk, index) => (
             <TalkCard key={index} talk={talk} />
           ))}
         </div>
       )}
-      {!toggle && <p className="text-center">...under construction..</p>}
+      {toggle && <p className="text-center">...under construction..</p>}
 
       <footer className="footer footer-center p-4 bg-base-300 text-base-content">
         <div>

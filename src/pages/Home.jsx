@@ -69,8 +69,22 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <div className="flex items-center justify-center mb-12"></div>
+        <section>
+          <div className="text-center p-10">
+            <p className="mt-2 leading-8 text-accent">
+              I'm a software engineer at Elogic, building an educational web
+              application. I also a professor at Oregon State
+              University-Cascades and the University of Edinburgh. I did my PhD
+              at Australian National University, and my BA and MA at University
+              of Oregon and UC Boulder, respectively. You can see my academic
+              work <Link to="/research/">here</Link>, my software projects{" "}
+              <Link to="/coding/">here</Link>, and my talks/teaching{" "}
+              <Link to="/talking/">here</Link>. My standard resume is{" "}
+              <Link to="/coding/resume/">here</Link> and my academic CV is{" "}
+              <a href="">here</a>.
+            </p>
+          </div>
+        </section>
       </main>
       <footer className="footer footer-center p-4 bg-base-300 text-base-content">
         <div>
