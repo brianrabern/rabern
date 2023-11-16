@@ -37,7 +37,7 @@ const Research = () => {
       <section className="px-10">
         <Nav> </Nav>
 
-        <h3 className="text-3xl text-primary font-medium py-2">
+        <h3 className="text-3xl text-secondary font-medium py-2">
           <code className="h-10 flex items-center justify-center">
             <Typewriter
               onInit={(typewriter) => {
@@ -136,10 +136,15 @@ const Research = () => {
                 className="hover:text-warning"
                 href="https://mathscinet.ams.org/mathscinet/freetools/collab-dist?source=838572&target=189017"
               >
-                erdős
+                <div className="badge badge-outline">erdős</div>
               </a>
             </div>
           </div>
+          <img
+            src="https://drive.google.com/uc?id=17-ngrcSXkTk5HUHLDUZlT5v14oVaD12g"
+            alt="me talking"
+            className="w-48 h-48 rounded-full mx-auto my-4"
+          />
           <div className="form-control text-center">
             <label className="label cursor-pointer d-flex align-center justify-center">
               <p className="px-1 text-xl text-gray-600">articles</p>
@@ -157,7 +162,7 @@ const Research = () => {
               <div className="text-2xl text-primary flex items-center justify-center">
                 Articles
               </div>
-              <div>
+              <div className="ml-4 mr-4 flex flex-wrap items-center justify-center">
                 {publicationsData.map((publication, index) => (
                   <PublicationCard key={index} publication={publication} />
                 ))}
@@ -179,6 +184,24 @@ const Research = () => {
         </div>
         <div className="bg-gray-100">
           <div className="mb-2 px-4 bg-gray-100">
+            <div className="ml-4 mr-4 flex flex-wrap items-center justify-center">
+              <img
+                src="https://drive.google.com/uc?id=1XW1e6AxOBKf8Wdo9_aNZTzKhO2NsYp2a"
+                alt="graph"
+                className="ml-1 mr-1 rounded-lg w-32"
+              />
+              <img
+                src="https://drive.google.com/uc?id=1XW1e6AxOBKf8Wdo9_aNZTzKhO2NsYp2a"
+                alt="graph"
+                className="ml-1 mr-1 rounded-lg w-32"
+              />
+              <img
+                src="https://drive.google.com/uc?id=1XW1e6AxOBKf8Wdo9_aNZTzKhO2NsYp2a"
+                alt="graph"
+                className="ml-1 mr-1 rounded-lg w-32"
+              />
+            </div>
+
             <div className="card bg-info">
               <div className="card-body">
                 <p className="text-center text-info">
@@ -190,6 +213,7 @@ const Research = () => {
           </div>
         </div>
       </section>
+
       <footer className="footer footer-center p-4 bg-base-300 text-base-content">
         <div>
           <div className="tooltip" data-tip="to top">

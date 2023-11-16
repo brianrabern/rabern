@@ -4,7 +4,7 @@ const MemoryCard = ({ memory }) => {
   return (
     <div className="card bg-base-300 hover:bg-black m-4">
       <div className="card-body">
-        <p className="text-sm md:text-lg ml-4 text-justify text-base-content">
+        <p className="text-sm md:text-lg ml-4 text-base-content">
           "{memory.content}"
         </p>
 

@@ -22,7 +22,7 @@ export default function Home() {
         <section>
           <Nav> </Nav>
           <div className="text-center p-10">
-            <h3 className="text-3xl text-primary font-medium py-2">
+            <h3 className="text-3xl text-secondary font-medium py-2">
               <code className="h-10 flex items-center justify-center">
                 <Typewriter
                   onInit={(typewriter) => {
@@ -73,15 +73,34 @@ export default function Home() {
           <div className="text-center p-10">
             <p className="mt-2 leading-8 text-accent">
               I'm a software engineer at Elogic, building an educational web
-              application. I also a professor at Oregon State
+              application. I'm also a professor at Oregon State
               University-Cascades and the University of Edinburgh. I did my PhD
               at Australian National University, and my BA and MA at University
               of Oregon and UC Boulder, respectively. You can see my academic
-              work <Link to="/research/">here</Link>, my software projects{" "}
-              <Link to="/coding/">here</Link>, and my talks/teaching{" "}
-              <Link to="/talking/">here</Link>. My standard resume is{" "}
-              <Link to="/coding/resume/">here</Link> and my academic CV is{" "}
-              <a href="">here</a>.
+              work{" "}
+              <Link className="hover:text-info" to="/research/">
+                here
+              </Link>
+              , my software projects{" "}
+              <Link className="hover:text-info" to="/coding/">
+                here
+              </Link>
+              , and my talks/teaching{" "}
+              <Link className="hover:text-info" to="/talking/">
+                here
+              </Link>
+              . My standard resume is{" "}
+              <Link className="hover:text-info" to="/coding/resume/">
+                here
+              </Link>{" "}
+              and my academic CV is{" "}
+              <a
+                className="hover:text-info"
+                href="https://drive.google.com/file/d/1QExH0KvxSVyd9RtFQFXeCJXbVx12dHpH/view?usp=sharing"
+              >
+                here
+              </a>
+              .
             </p>
           </div>
         </section>

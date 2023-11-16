@@ -160,7 +160,7 @@ const LandonMemorial = () => {
               alt="graph"
               className="rounded-lg max-w-xs" // Set the image to float left and add some margin
             />
-            <p className="text-sm ml-4 text-justify text-base-300">
+            <p className="text-sm ml-4 text-base-300">
               Landon was born and raised in Roseburg, Oregon. As a child he
               developed a deep interest in computers, machine intelligence, and
               science fiction. Starting in the 1980s with a Commodore 64, and

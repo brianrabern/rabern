@@ -4,17 +4,15 @@ import { themeChange } from "theme-change";
 import Nav from "../components/Nav.jsx";
 import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
-import echo from "./assets/echo.png";
-import venn1 from "./assets/venn1.png";
+import projectsData from "../components/projectsData.js";
+import { FaGithub, FaGlobe } from "react-icons/fa";
+
+const projects = projectsData || [];
 
 const Coding = () => {
   useEffect(() => {
     themeChange(false);
   }, []);
-  // useEffect(() => {
-  //   // set default theme on this page
-  //   localStorage.setItem("theme", "bumblebee");
-  // }, []);
 
   return (
     <main>
@@ -38,43 +36,57 @@ const Coding = () => {
           </code>
         </h3>
       </section>
-      <p>
-        under construction... <Link to="/coding/resume/">Resume</Link>
-      </p>
+      <div className="text-right mr-20 mb-4">
+        <Link to="resume/">
+          <span className="badge badge-warning badge-outline hover:badge-info hover:text-black">
+            Resume
+          </span>
+        </Link>
+      </div>
 
-      <div className="flex">
-        <div className="ml-3 mr-3 card w-96 bg-base-100 shadow-xl flex-1">
-          <figure>
-            <img src={echo} alt="Shoes" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">
-              Shoes!
-              <div className="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <div className="badge badge-outline">Fashion</div>
-              <div className="badge badge-outline">Products</div>
+      <div className="ml-4 mr-4 flex flex-wrap items-center justify-center">
+        {projects.map((project) => (
+          <div className="mb-4 ml-3 mr-3 card h-96 w-96 bg-base-300 shadow-xl">
+            <figure>
+              <img src={project.img} alt={project.title} />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">
+                {project.title}
+                {project.link && (
+                  <div className="tooltip" data-tip="live">
+                    {" "}
+                    <div className="badge badge-info hover:badge-secondary ">
+                      <a href={project.link}>
+                        {" "}
+                        <FaGlobe />
+                      </a>
+                    </div>
+                  </div>
+                )}
+                {project.github && (
+                  <div className="tooltip" data-tip="github">
+                    <div className="badge badge-primary hover:badge-secondary ">
+                      <a
+                        className="text-black hover:text-white"
+                        href={project.github}
+                      >
+                        {" "}
+                        <FaGithub />
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </h2>
+              <p>{project.description}</p>
+              <div className="card-actions justify-end">
+                {project.tech.map((t) => (
+                  <div className="badge badge-outline">{t}</div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-        <div className="ml-3 mr-3 card w-96 bg-base-100 shadow-xl flex-1">
-          <figure>
-            <img src={venn1} alt="Shoes" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">
-              Shoes!
-              <div className="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <div className="badge badge-outline">Fashion</div>
-              <div className="badge badge-outline">Products</div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </main>
   );

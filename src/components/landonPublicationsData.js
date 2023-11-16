@@ -57,7 +57,7 @@ const landonPublicationsData = [
     journal: "Journal of Graph Theory",
     year: "2022",
     author: "Cranston, Daniel W and Lafayette, Hudson and Rabern, Landon",
-    title: "Coloring (P$_5$, gem)-free graphs with $\\Delta - 1$ colors",
+    title: "Coloring (P_5, gem)-free graphs with Delta - 1 colors",
     ENTRYTYPE: "article",
     ID: "cranston2022coloring",
     bibtex:
@@ -143,7 +143,7 @@ const landonPublicationsData = [
     journal: "The Electronic Journal of Combinatorics",
     year: "2018",
     author: "Rabern, Landon",
-    title: "A better lower bound on average degree of $k$-list-critical graphs",
+    title: "A better lower bound on average degree of k-list-critical graphs",
     ENTRYTYPE: "article",
     ID: "rabern2018better",
     bibtex:
@@ -172,7 +172,7 @@ const landonPublicationsData = [
     journal: "SIAM Journal on Discrete Mathematics",
     year: "2017",
     author: "Cranston, Daniel W.  and Rabern, Landon",
-    title: "List-Coloring Claw-Free Graphs with $\\Delta$-1 Colors",
+    title: "List-Coloring Claw-Free Graphs with Delta-1 Colors",
     ENTRYTYPE: "article",
     ID: "cranston2017list",
     bibtex:
@@ -260,7 +260,7 @@ const landonPublicationsData = [
     journal: "The Electronic Journal of Combinatorics",
     year: "2016",
     author: "Cranston, Daniel W.  and Rabern, Landon",
-    title: "Painting Squares in $\\Delta^{2}-1$ Shades",
+    title: "Painting Squares in Delta^{2}-1 Shades",
     ENTRYTYPE: "article",
     ID: "cranston2016painting",
     bibtex:
@@ -320,7 +320,7 @@ const landonPublicationsData = [
     year: "2015",
     author: "Cranston, Daniel W.  and Rabern, Landon",
     title:
-      "Coloring a graph with $\\Delta$- 1 colors: Conjectures equivalent to the Borodin--Kostochka conjecture that appear weaker",
+      "Coloring a graph with Delta-1 colors: Conjectures equivalent to the Borodin--Kostochka conjecture that appear weaker",
     ENTRYTYPE: "article",
     ID: "cranston2015coloring",
     bibtex:
@@ -335,7 +335,7 @@ const landonPublicationsData = [
     journal: "SIAM Journal on Discrete Mathematics",
     year: "2015",
     author: "Cranston, Daniel W. and Rabern, Landon",
-    title: "Graphs with $\\chi$=$\\Delta$ Have Big Cliques",
+    title: "Graphs with chi = Delta Have Big Cliques",
     ENTRYTYPE: "article",
     ID: "cranston2015graphs",
     bibtex:
@@ -404,7 +404,7 @@ const landonPublicationsData = [
     journal: "unpublished",
     year: "2014",
     author: "Rabern, Landon",
-    title: "The list-chromatic index of K$_8$ and K$_{10}$",
+    title: "The list-chromatic index of K_8 and K_10",
     ENTRYTYPE: "article",
     ID: "rabern2014list",
     bibtex:
@@ -419,7 +419,7 @@ const landonPublicationsData = [
     journal: "SIAM Journal on Discrete Mathematics",
     year: "2013",
     author: "Cranston, Daniel W. and Rabern, Landon",
-    title: "Coloring claw-free graphs with $\\Delta$-1 colors",
+    title: "Coloring claw-free graphs with Delta-1 colors",
     ENTRYTYPE: "article",
     ID: "cranston2013coloring",
     bibtex:
@@ -507,7 +507,7 @@ const landonPublicationsData = [
     journal: "Journal of Combinatorial Theory, Series B",
     year: "2012",
     author: "Rabern, Landon",
-    title: "$\\Delta$-Critical graphs with small high vertex cliques",
+    title: "Delta-Critical graphs with small high vertex cliques",
     ENTRYTYPE: "article",
     ID: "rabern2012delta",
     bibtex:
@@ -726,7 +726,7 @@ const landonPublicationsData = [
     year: "2005",
     author: "Rabern, Landon",
     title:
-      "Some bounds on convex combinations of $\\omega$ and $\\chi$ for decompositions into many parts",
+      "Some bounds on convex combinations of omega and chi for decompositions into many parts",
     ENTRYTYPE: "article",
     ID: "rabern2005some",
     bibtex:

@@ -10,7 +10,7 @@ const PublicationCard = ({ publication }) => {
   };
 
   return (
-    <div className="card bg-base-300 hover:bg-black m-4">
+    <div className="card h-96  max-w-xs w-full bg-base-300 hover:bg-black m-4">
       <div className="card-body">
         <h2 className="text-xl text-base-content">{publication.title}</h2>
 

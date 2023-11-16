@@ -4,6 +4,7 @@ const brianPublicationsData = [
     volume: "44",
     title: "A Puzzle About Scope for Restricted Deontic Modals",
     pages: "8--10",
+    doi: "10.7358/snip-2023-044-rato",
     journal: "Snippets",
     author: "Brian Rabern and Patrick Todd",
     ENTRYTYPE: "article",
