@@ -98,7 +98,7 @@ const Research = () => {
               </a>
               <a
                 data-tip="scholar"
-                href="https://scholar.google.com/citations?user=aZg5kIEAAAAJ&hl=en"
+                href="https://scholar.google.com/citations?user=vzRA2EMAAAAJ&hl=en"
                 className="btn btn-sm btn-info tooltip hover:bg-blue-700"
               >
                 <SiGooglescholar className="text-2xl hover:text-white" />
@@ -162,7 +162,9 @@ const Research = () => {
               <div className="text-2xl text-primary flex items-center justify-center">
                 Articles
               </div>
-              <div className="ml-4 mr-4 flex flex-wrap items-center justify-center">
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {/* <div className="ml-4 mr-4 flex flex-wrap items-center justify-center"> */}
                 {publicationsData.map((publication, index) => (
                   <PublicationCard key={index} publication={publication} />
                 ))}

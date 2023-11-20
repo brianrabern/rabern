@@ -40,6 +40,8 @@ const brianPublicationsDataBooks = [
     bibtex:
       "@book{Truswell2018-TRUPOS,\n    year = {2018},\n    title = {Proceedings of Sinn Und Bedeutung 21},\n    publisher = {Semantics Archives},\n    editor = {Rob Truswell and Chris Cummins and Caroline Heycock and Brian Rabern and Hannah Rohde}\n}\n\n",
     url: "https://philpapers.org/rec/TRUPOS",
+    cover:
+      "https://drive.google.com/uc?export=view&id=1GZkHTLgV7luDmOP0pud1pj393sTMTizs",
   },
   {
     year: "2012",
@@ -51,6 +53,8 @@ const brianPublicationsDataBooks = [
     bibtex:
       "@phdthesis{Rabern2012-BRIMAC-3,\n    year = {2012},\n    title = {The Semantics of Contextual Shifting and Sensitivity},\n    school = {The Australian National University},\n    author = {Brian Rabern}\n}\n\n",
     url: "https://philpapers.org/rec/BRIMAC-3",
+    cover:
+      "https://drive.google.com/uc?export=view&id=1oYj2wv1Vjkz2L3T69RtLoiW6WoX_2GHs",
   },
 ];
 
