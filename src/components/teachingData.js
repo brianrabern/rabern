@@ -1,11 +1,11 @@
 const teachingData = [
-  {
-    title: "CS 391: Ethical Issues in Computer Science",
-    year: "2023-2024",
-    level: "undergraduate",
-    students: "40",
-    university: "Oregon State University-Cascades",
-  },
+//   {
+//     title: "CS 391: Ethical Issues in Computer Science",
+//     year: "2023-2024",
+//     level: "undergraduate",
+//     students: "40",
+//     university: "Oregon State University-Cascades",
+//   },
   {
     title: "The Philosophy of Virtual Worlds",
     year: "2022",

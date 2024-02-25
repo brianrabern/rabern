@@ -66,6 +66,14 @@ const Research = () => {
                   className="w-full image-class transform hover:rotate-180"
                 />
               </a> */}
+			  <div className="mr-4 mb-1 text-center text-secondary">
+              <a
+                className=" hover:text-primary"
+                href="https://drive.google.com/file/d/1mXvjire6pXGe270VLhglVQ-Pk3gVr77u/view?usp=sharing"
+              >
+                <div className="badge hover:badge-secondary hover:text-black ">curriculum vitae</div>
+              </a>
+            </div>
             </div>
 
             <div className="mb-3 flex justify-center space-x-4">
@@ -131,6 +139,7 @@ const Research = () => {
                 </button>
               </a>
             </div>
+
             <div className="mr-4 mb-1 text-right text-blue-700">
               <a
                 className="hover:text-warning"

@@ -75,7 +75,7 @@ export default function Home() {
               I'm a professor at the University of Edinburgh -- or, officially a
 			  <a className="hover:text-secondary" href="https://en.wikipedia.org/wiki/Reader_(academic_rank)"> Reader</a>. I did my PhD
               at Australian National University, and my BA and MA at University
-              of Oregon and UC Boulder, respectively. I'm a software engineer building educational web
+              of Oregon and UC Boulder, respectively. I'm also a software engineer making, among other things, educational web
               applications. You can see my academic
               work{" "}
               <Link className="hover:text-secondary" to="/research/">
@@ -90,19 +90,28 @@ export default function Home() {
                 here
               </Link>
               .
-			  {/* My standard resume is{" "}
+			  My software resume is{" "}
               <Link className="hover:text-info" to="/coding/resume/">
                 here
               </Link>{" "}
               and my academic CV is{" "}
               <a
                 className="hover:text-info"
-                href="https://drive.google.com/file/d/1QExH0KvxSVyd9RtFQFXeCJXbVx12dHpH/view?usp=sharing"
+                href="https://drive.google.com/file/d/1mXvjire6pXGe270VLhglVQ-Pk3gVr77u/view?usp=sharing"
               >
                 here
               </a>
-              . */}
+              .
             </p>
+			<br/>
+			<div className="mr-4 mb-1 text-center text-secondary">
+              <a
+                className=" hover:text-primary"
+                href="https://drive.google.com/file/d/1mXvjire6pXGe270VLhglVQ-Pk3gVr77u/view?usp=sharing"
+              >
+                <div className="badge hover:badge-secondary hover:text-black ">curriculum vitae</div>
+              </a>
+            </div>
           </div>
         </section>
       </main>
