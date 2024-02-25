@@ -32,7 +32,8 @@ const ResumePdf = () => {
             <p className="px-1 text-sm  text-gray-600 justify-right">pdf</p>
           </label>
         </div>
-        <a href="https://drive.google.com/file/d/1cRoM-muAdzX16ZTb2a9-QUBwAXI69WBc/view?usp=sharing">
+
+        <a href="https://drive.google.com/file/d/1SCT18ElauYOqbQuIJ9mCTvSd9Ze3HCIl/view?usp=sharing">
           <button className="btn btn-block">open pdf</button>
         </a>
         <div className="py-10 flex justify-center w-full h-full">

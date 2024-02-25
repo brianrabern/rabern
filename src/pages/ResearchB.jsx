@@ -141,8 +141,9 @@ const Research = () => {
             </div>
           </div>
           <img
-            src="https://drive.google.com/uc?id=17-ngrcSXkTk5HUHLDUZlT5v14oVaD12g"
-            alt="me talking"
+
+            src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/mirror.png"
+            alt="mirror"
             className="w-48 h-48 rounded-full mx-auto my-4"
           />
           <div className="form-control text-center">
@@ -188,17 +189,17 @@ const Research = () => {
           <div className="mb-2 px-4 bg-gray-100">
             <div className="ml-4 mr-4 flex flex-wrap items-center justify-center">
               <img
-                src="https://drive.google.com/uc?id=1XW1e6AxOBKf8Wdo9_aNZTzKhO2NsYp2a"
+                src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/black_graph.png"
                 alt="graph"
                 className="ml-1 mr-1 rounded-lg w-32"
               />
               <img
-                src="https://drive.google.com/uc?id=1XW1e6AxOBKf8Wdo9_aNZTzKhO2NsYp2a"
+                src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/black_graph.png"
                 alt="graph"
                 className="ml-1 mr-1 rounded-lg w-32"
               />
               <img
-                src="https://drive.google.com/uc?id=1XW1e6AxOBKf8Wdo9_aNZTzKhO2NsYp2a"
+                src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/black_graph.png"
                 alt="graph"
                 className="ml-1 mr-1 rounded-lg w-32"
               />

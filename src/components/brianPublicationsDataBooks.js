@@ -11,7 +11,7 @@ const brianPublicationsDataBooks = [
       "@book{Rabern2023-RABSII,\n    year = {2023},\n    title = {Special Issue in Honour of Landon Rabern, Discrete Mathematics},\n    publisher = {Elsevier},\n    editor = {Brian Rabern and D. W. Cranston and H. Keirstead}\n}\n\n",
     url: "https://philpapers.org/rec/RABSII",
     cover:
-      "https://drive.google.com/uc?export=view&id=1peDoax8cFFo6X2gcNbx4Rib9hGwv28QI",
+      "https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/dm_landon.png",
   },
   {
     year: "2018",
@@ -26,7 +26,7 @@ const brianPublicationsDataBooks = [
       "@book{Ball2018-BALTSO-32,\n    year = {2018},\n    title = {The Science of Meaning: Essays on the Metatheory of Natural Language Semantics},\n    publisher = {Oxford University Press},\n    editor = {Derek Ball and Brian Rabern},\n    address = {Oxford}\n}\n\n",
     url: "https://philpapers.org/rec/BALTSO-32",
     cover:
-      "https://drive.google.com/uc?export=view&id=1wpWaVPnkWHDHCRdhfDbH-_nzG8v3ysC3",
+      "https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/som_cover.png",
   },
   {
     year: "2018",
@@ -41,7 +41,7 @@ const brianPublicationsDataBooks = [
       "@book{Truswell2018-TRUPOS,\n    year = {2018},\n    title = {Proceedings of Sinn Und Bedeutung 21},\n    publisher = {Semantics Archives},\n    editor = {Rob Truswell and Chris Cummins and Caroline Heycock and Brian Rabern and Hannah Rohde}\n}\n\n",
     url: "https://philpapers.org/rec/TRUPOS",
     cover:
-      "https://drive.google.com/uc?export=view&id=1GZkHTLgV7luDmOP0pud1pj393sTMTizs",
+      "https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/sinn_cover.png",
   },
   {
     year: "2012",
@@ -54,7 +54,7 @@ const brianPublicationsDataBooks = [
       "@phdthesis{Rabern2012-BRIMAC-3,\n    year = {2012},\n    title = {The Semantics of Contextual Shifting and Sensitivity},\n    school = {The Australian National University},\n    author = {Brian Rabern}\n}\n\n",
     url: "https://philpapers.org/rec/BRIMAC-3",
     cover:
-      "https://drive.google.com/uc?export=view&id=1oYj2wv1Vjkz2L3T69RtLoiW6WoX_2GHs",
+      "https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/diss.png",
   },
 ];
 

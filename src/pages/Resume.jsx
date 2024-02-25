@@ -45,8 +45,7 @@ const Resume = () => {
         <div className="container text-gray-800 mx-auto my-8 p-8 bg-gray-100 shadow-lg rounded-md">
           <h1 className="text-3xl font-bold mb-4">Brian Rabern</h1>
           <p>Email: brian.rabern@gmail.com</p>
-          <p>Phone: 541-530-4337</p>
-          <p>Location: Bend, OR</p>
+
           <div className="mt-1 text-xl flex space-x-4">
             <a href="https://linkedin.com/in/brian-rabern">
               <AiFillLinkedin className="hover:text-warning" />
@@ -68,9 +67,19 @@ const Resume = () => {
 
           <div className="mt-4">
             <h2 className="text-2xl font-bold mb-2">Professional Experience</h2>
-
+			<p className="mb-1 font-medium">
+			Full Stack Engineer, GraphFm, Inc. (2023-now)
+            </p>
+            <ul className="list-disc list-inside">
+              <li>
+			  Crafted SQL queries and developed bespoke Python and SQL interfaces for optimized data processing.
+              </li>
+              <li>
+			  Engineered data migration scripts facilitating smooth transition from graph databases to relational databases.
+              </li>
+            </ul>
             <p className="mb-1 font-medium">
-              Software Engineer, Elogic, Ltd. (2019-now)
+              Software Engineer, Elogic, Ltd. (2019-2023)
             </p>
             <ul className="list-disc list-inside">
               <li>
@@ -82,7 +91,7 @@ const Resume = () => {
                 produce models.
               </li>
             </ul>
-            <p className="mt-2 mb-1 font-medium">
+            {/* <p className="mt-2 mb-1 font-medium">
               Associated Faculty in Computer Science, Oregon State University -
               Cascades (2023-now)
             </p>
@@ -95,10 +104,10 @@ const Resume = () => {
                 Made educational content on multi-tier web applications using,
                 e.g., Python, React.
               </li>
-            </ul>
+            </ul> */}
 
             <p className="mt-2 mb-1 font-medium">
-              Associate Professor in PPLS, University of Edinburgh (2013-2023)
+              Associate Professor in PPLS, University of Edinburgh (2013-now)
             </p>
             <ul className="list-disc list-inside">
               <li>
@@ -135,7 +144,7 @@ const Resume = () => {
           <div className="mt-4">
             <h2 className="text-2xl font-bold mb-2">Certifications </h2>
             <p className="mb-1 font-semibold">
-              Advanced Software Engineering Certificate, Hack Reactor (2023)
+              Advanced Software Engineering Certificate, Hack Reactor
             </p>
             <ul className="list-disc list-inside">
               <li>

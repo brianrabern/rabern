@@ -37,10 +37,10 @@ export default function Home() {
               </code>
             </h3>
             <p className="mt-2 text-lg leading-8 text-accent">
-              I'm a teacher, researcher, and software developer. I like to write
-              code and play with technology; I like logic puzzles, paradoxes,
+              I'm a teacher, researcher, and software developer. I like logic puzzles, paradoxes,
               and formal philosophy. My research centers around natural language
-              semantics and logic. And my tech interests include artifical
+              semantics and logic. I also like to write
+              code and play with technology -- my tech interests include artifical
               intelligence, virtual reality, semantic web, Python, and
               JavaScript/React. I also like to do things outside.
             </p>
@@ -72,11 +72,10 @@ export default function Home() {
         <section>
           <div className="text-center p-10">
             <p className="mt-2 leading-8 text-accent">
-              I'm a software engineer at Elogic, building an educational web
-              application. I'm also a professor at Oregon State
-              University-Cascades and the University of Edinburgh. I did my PhD
+              I'm  a professor (officially a Reader) the University of Edinburgh. I did my PhD
               at Australian National University, and my BA and MA at University
-              of Oregon and UC Boulder, respectively. You can see my academic
+              of Oregon and UC Boulder, respectively. I'm a software engineer building educational web
+              applications. You can see my academic
               work{" "}
               <Link className="hover:text-info" to="/research/">
                 here
@@ -89,7 +88,8 @@ export default function Home() {
               <Link className="hover:text-info" to="/talking/">
                 here
               </Link>
-              . My standard resume is{" "}
+              .
+			  {/* My standard resume is{" "}
               <Link className="hover:text-info" to="/coding/resume/">
                 here
               </Link>{" "}
@@ -100,7 +100,7 @@ export default function Home() {
               >
                 here
               </a>
-              .
+              . */}
             </p>
           </div>
         </section>
