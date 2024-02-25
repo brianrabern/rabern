@@ -42,7 +42,7 @@ const projectsData = [
     description:
       "A user-friendly interface implementing the logic for Hofstadter's proof system employing React components.",
     tech: ["React", "JavaScript", "CSS"],
-    img: "https://drive.google.com/uc?id=1dagqfTYaG5dyAeAGiFwQgl2MTJv2fMeD",
+    img: "https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/miu.png",
     link: "https://mu-playground.brianrabern.net/",
     github: "",
   },
@@ -68,16 +68,16 @@ const projectsData = [
     description:
       "A web-based application for teaching the syntax and semantics of first-order logic with multiple exersices and automatic grading.",
     tech: ["Typescript", "React", "Tailwind", "Firebase"],
-    img: "https://drive.google.com/uc?id=1G-doa2iPO6JVI0rP_Kpz4yCkNBnRO2cF",
+    img: "https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/elogic.png",
     link: "https://info.elogic.land/",
     github: "",
   },
   {
-    title: "",
+    title: "munroGo",
     description:
       "A mountain-climbing app that allows users to log and track climbs and statistics with realtime weather and map data",
     tech: ["Python", "FastAPI", "React", "Redux", "MongoDB", "Docker"],
-    img: "https://drive.google.com/uc?id=1am9jl6PBMSL3xrm6JnyWGDTsJotuMvZg",
+    img: "https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/munro.png",
     link: "",
     github: "https://github.com/brianrabern/munroGo",
   },

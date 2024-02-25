@@ -52,14 +52,14 @@ const Talking = () => {
 
       {!toggle && (
         <img
-          src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/me_talking.jpeg"
+          src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/jowett.jpeg"
           alt="me talking"
           className="w-48 h-48 rounded-full mx-auto my-4"
         />
       )}
       {toggle && (
         <img
-          src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/jowett.jpeg"
+          src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/me_talking.jpeg"
           alt="me talking"
           className="w-48 h-48 rounded-full mx-auto my-"
         />

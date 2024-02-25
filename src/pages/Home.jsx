@@ -72,20 +72,21 @@ export default function Home() {
         <section>
           <div className="text-center p-10">
             <p className="mt-2 leading-8 text-accent">
-              I'm  a professor (officially a Reader) the University of Edinburgh. I did my PhD
+              I'm a professor at the University of Edinburgh -- or, officially a
+			  <a className="hover:text-secondary" href="https://en.wikipedia.org/wiki/Reader_(academic_rank)"> Reader</a>. I did my PhD
               at Australian National University, and my BA and MA at University
               of Oregon and UC Boulder, respectively. I'm a software engineer building educational web
               applications. You can see my academic
               work{" "}
-              <Link className="hover:text-info" to="/research/">
+              <Link className="hover:text-secondary" to="/research/">
                 here
               </Link>
               , my software projects{" "}
-              <Link className="hover:text-info" to="/coding/">
+              <Link className="hover:text-secondary" to="/coding/">
                 here
               </Link>
               , and my talks/teaching{" "}
-              <Link className="hover:text-info" to="/talking/">
+              <Link className="hover:text-secondary" to="/talking/">
                 here
               </Link>
               .
