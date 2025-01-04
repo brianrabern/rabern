@@ -67,15 +67,17 @@ const Resume = () => {
 
           <div className="mt-4">
             <h2 className="text-2xl font-bold mb-2">Professional Experience</h2>
-			<p className="mb-1 font-medium">
-			Full Stack Engineer, GraphFm, Inc. (2023-now)
+            <p className="mb-1 font-medium">
+              Full Stack Engineer, GraphFm, Inc. (2023-now)
             </p>
             <ul className="list-disc list-inside">
               <li>
-			  Crafted SQL queries and developed bespoke Python and SQL interfaces for optimized data processing.
+                Crafted SQL queries and developed bespoke Python and SQL
+                interfaces for optimized data processing.
               </li>
               <li>
-			  Engineered data migration scripts facilitating smooth transition from graph databases to relational databases.
+                Engineered data migration scripts facilitating smooth transition
+                from graph databases to relational databases.
               </li>
             </ul>
             <p className="mb-1 font-medium">
@@ -107,7 +109,7 @@ const Resume = () => {
             </ul> */}
 
             <p className="mt-2 mb-1 font-medium">
-              Associate Professor in PPLS, University of Edinburgh (2013-now)
+              Associate Professor in PPLS, University of Edinburgh (2013-2023)
             </p>
             <ul className="list-disc list-inside">
               <li>

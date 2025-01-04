@@ -1,6 +1,5 @@
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { SiGooglescholar } from "react-icons/si";
-import { RiTwitterXFill } from "react-icons/ri";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
 import bdr21a from "./bdr21a.jpeg";
@@ -37,12 +36,11 @@ export default function Home() {
               </code>
             </h3>
             <p className="mt-2 text-lg leading-8 text-accent">
-              I'm a teacher, researcher, and software developer. I like logic puzzles, paradoxes,
-              and formal philosophy. My research centers around natural language
-              semantics and logic. I also like to write
-              code and play with technology -- my tech interests include artifical
-              intelligence, virtual reality, semantic web, Python, and
-              JavaScript/React. I also like to do things outside.
+              I’m a software developer who enjoys logic puzzles, paradoxes,
+              problem-solving, and formal philosophy. In my spare time, I do
+              some writing and research. My tech interests include AI, virtual
+              reality, the semantic web, Python, and JavaScript/React. I also
+              like to do things outside.
             </p>
           </div>
 
@@ -57,9 +55,10 @@ export default function Home() {
                 {" "}
                 <AiFillLinkedin className="hover:text-blue-500" />
               </a>
-              <a href="https://twitter.com/brian_rabern">
-                <RiTwitterXFill className="hover:text-info" />
-              </a>
+
+              {/* <a href="https://bsky.app/profile/rabern.bsky.social">
+                <SiBluesky className="hover:text-info" />
+              </a> */}
               <a
                 href="https://scholar.google.com/citations?user=vzRA2EMAAAAJ&hl=en"
                 className="hidden sm:block"
@@ -72,12 +71,18 @@ export default function Home() {
         <section>
           <div className="text-center p-10">
             <p className="mt-2 leading-8 text-accent">
-              I'm a professor at the University of Edinburgh -- or, officially a
-			  <a className="hover:text-secondary" href="https://en.wikipedia.org/wiki/Reader_(academic_rank)"> Reader</a>. I did my PhD
-              at Australian National University, and my BA and MA at University
-              of Oregon and UC Boulder, respectively. I'm also a software engineer making, among other things, educational web
-              applications. You can see my academic
-              work{" "}
+              Formerly, I was a professor at the University of Edinburgh -- or,
+              officially a
+              <a
+                className="hover:text-secondary"
+                href="https://en.wikipedia.org/wiki/Reader_(academic_rank)"
+              >
+                {" "}
+                Reader
+              </a>
+              . I did my PhD at Australian National University, and my BA and MA
+              at University of Oregon and UC Boulder, respectively. You can see
+              my academic work{" "}
               <Link className="hover:text-secondary" to="/research/">
                 here
               </Link>
@@ -89,8 +94,7 @@ export default function Home() {
               <Link className="hover:text-secondary" to="/talking/">
                 here
               </Link>
-              .
-			  My software resume is{" "}
+              . My software resume is{" "}
               <Link className="hover:text-info" to="/coding/resume/">
                 here
               </Link>{" "}
@@ -103,13 +107,15 @@ export default function Home() {
               </a>
               .
             </p>
-			<br/>
-			<div className="mr-4 mb-1 text-center text-secondary">
+            <br />
+            <div className="mr-4 mb-1 text-center text-secondary">
               <a
                 className=" hover:text-primary"
                 href="https://drive.google.com/file/d/1mXvjire6pXGe270VLhglVQ-Pk3gVr77u/view?usp=sharing"
               >
-                <div className="badge hover:badge-secondary hover:text-black ">curriculum vitae</div>
+                <div className="badge hover:badge-secondary hover:text-black ">
+                  curriculum vitae
+                </div>
               </a>
             </div>
           </div>
