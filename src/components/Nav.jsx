@@ -58,10 +58,10 @@ export default function Nav({ highContrast, onToggleHighContrast }) {
             <span className="text-base-content/80">:</span>{" "}
             <Link
               to="/"
-              className="text-accent hover:text-accent/90 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded uppercase tracking-[0.12em]"
+              className="text-accent hover:text-accent/90 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
               title="Home"
             >
-              Brian Rabern
+              brianrabern
             </Link>
             <span className="text-base-content/80">(</span>
             <span className="text-info">x</span>
