@@ -7,6 +7,13 @@ const teachingData = [
 //     university: "Oregon State University-Cascades",
 //   },
   {
+    title: "Ethics of Technology (Computer Science)",
+    year: "2024",
+    level: "undergraduate",
+    students: "30",
+    university: "Oregon State University-Cascades",
+  },
+  {
     title: "The Philosophy of Virtual Worlds",
     year: "2022",
     level: "honours",
@@ -23,14 +30,14 @@ const teachingData = [
   {
     title: "Symbolic Logic",
     year: "2013–2023",
-    level: "sub-honours",
+    level: "undergraduate",
     students: "400+",
     university: "University of Edinburgh",
   },
   {
     title: "Modal Logic",
     year: "2019-2021",
-    level: "sub-honours",
+    level: "undergraduate",
     students: "40",
     university: "University of Edinburgh",
   },
@@ -72,7 +79,7 @@ const teachingData = [
   {
     title: "Mind, Matter, and Language",
     year: "2018–2019",
-    level: "sub-honours",
+    level: "undergraduate",
     students: "300+",
     university: "University of Edinburgh",
   },

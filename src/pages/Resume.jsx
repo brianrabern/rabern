@@ -1,188 +1,254 @@
 import React from "react";
-import { useState } from "react";
+import { useEffect } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { FaArrowAltCircleUp } from "react-icons/fa";
-import { useEffect } from "react";
-import Nav from "../components/Nav.jsx";
-import { themeChange } from "theme-change";
-import { useNavigate } from "react-router-dom";
+
+const RESUME_PDF_URL =
+  "https://drive.google.com/file/d/1SCT18ElauYOqbQuIJ9mCTvSd9Ze3HCIl/view?usp=sharing";
+
+const sectionTitle =
+  "font-mono text-[10px] uppercase tracking-[0.2em] text-primary/70 mb-4 pb-2 border-b border-base-300/50";
+
+const jobBlock = "mb-10 last:mb-0";
+
+const jobHead =
+  "flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6";
+
+const jobTitle =
+  "font-sans text-base font-semibold text-base-content tracking-tight";
+
+const jobWhen =
+  "font-mono text-[11px] text-primary/90 tabular-nums shrink-0";
+
+const bullets =
+  "mt-3 list-none space-y-2.5 pl-0 text-sm text-base-content/70 leading-[1.65]";
+
+const bulletItem =
+  "relative pl-4 before:absolute before:left-0 before:top-[0.62em] before:h-px before:w-2 before:bg-primary/35";
 
 const Resume = () => {
   useEffect(() => {
-    themeChange(false);
     window.scrollTo(0, 0);
   }, []);
 
-  const navigate = useNavigate();
-  const [isExpandedTech, setIsExpandedTech] = useState(false);
-  const [isExpandedLinks, setIsExpandedLinks] = useState(false);
-
-  function togglePdf() {
-    navigate("/coding/resume/resumepdf");
-  }
-  const handleClick = () => {
-    setIsExpandedTech(!isExpandedTech);
-  };
-  const handleClickLinks = () => {
-    setIsExpandedLinks(!isExpandedLinks);
-  };
-
   return (
-    <>
-      <main className="px-10">
-        <Nav> </Nav>
-        <div className="form-control">
-          <label className="label cursor-pointer justify-end">
-            <p className="px-1 text-sm text-gray-600 justify-right">html</p>
-            <input
-              type="checkbox"
-              className="toggle toggle-secondary"
-              onClick={togglePdf}
-            />
-            <p className="px-1 text-sm  text-gray-600 justify-right">pdf</p>
-          </label>
-        </div>
-        <div className="container text-gray-800 mx-auto my-8 p-8 bg-gray-100 shadow-lg rounded-md">
-          <h1 className="text-3xl font-bold mb-4">Brian Rabern</h1>
-          <p>Email: brian.rabern@gmail.com</p>
-
-          <div className="mt-1 text-xl flex space-x-4">
-            <a href="https://linkedin.com/in/brian-rabern">
-              <AiFillLinkedin className="hover:text-warning" />
-            </a>
-            <a href="https://github.com/brianrabern">
-              {" "}
-              <AiFillGithub className="hover:text-warning" />
+    <main className="pb-12">
+      <div className="console-panel max-w-3xl mx-auto px-6 py-10 sm:px-11 sm:py-12 font-sans text-sm text-base-content/80 leading-relaxed">
+        <header className="mb-10 pb-8 border-b border-base-300/40">
+          <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+            <h1 className="font-mono text-2xl uppercase tracking-wide text-primary m-0">
+              Brian Rabern
+            </h1>
+            <a
+              href={RESUME_PDF_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] uppercase tracking-widest text-base-content/45 hover:text-primary focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded px-1 py-0.5 shrink-0"
+            >
+              PDF (Drive)
             </a>
           </div>
-          <div className="mt-4">
-            <h2 className="text-2xl font-bold mb-2">About</h2>
-
-            <p className="mt-2">
-              As a software developer, I bring a distinctive blend of
-              interpersonal, technical, and problem-solving skills, honed
-              through my background as a philosophy and logic professor.
+          <div className="font-mono text-xs text-base-content/50 space-y-0.5">
+            <p className="m-0">
+              <a
+                href="mailto:brian.rabern@gmail.com"
+                className="hover:text-primary hover:underline"
+              >
+                brian.rabern@gmail.com
+              </a>
+              <span className="text-base-content/35"> · </span>
+              <a
+                href="tel:+15415304337"
+                className="hover:text-primary hover:underline"
+              >
+                541-530-4337
+              </a>
+            </p>
+            <p className="m-0">
+              <a
+                href="https://brianrabern.net/"
+                className="hover:text-primary hover:underline"
+              >
+                brianrabern.net
+              </a>
+              <span className="text-base-content/35"> · </span>
+              Bend, OR
             </p>
           </div>
 
-          <div className="mt-4">
-            <h2 className="text-2xl font-bold mb-2">Professional Experience</h2>
-            <p className="mb-1 font-medium">
-              Full Stack Engineer, GraphFm, Inc. (2023-now)
-            </p>
-            <ul className="list-disc list-inside">
-              <li>
-                Crafted SQL queries and developed bespoke Python and SQL
-                interfaces for optimized data processing.
+          <div className="flex gap-4 text-xl mt-6">
+            <a
+              href="https://linkedin.com/in/brian-rabern"
+              className="text-base-content/50 hover:text-primary focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
+              aria-label="LinkedIn"
+            >
+              <AiFillLinkedin />
+            </a>
+            <a
+              href="https://github.com/brianrabern"
+              className="text-base-content/50 hover:text-primary focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
+              aria-label="GitHub"
+            >
+              <AiFillGithub />
+            </a>
+          </div>
+        </header>
+
+        <section className="mb-10">
+          <h2 className={sectionTitle}>About</h2>
+          <p className="m-0 max-w-prose text-base-content/75 leading-[1.7]">
+            I offer a unique mix of interpersonal, technical, and analytical
+            skills, built through hands-on AI system development and a decade of
+            research in philosophy and logic.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className={sectionTitle}>Technical skills</h2>
+          <p className="m-0 rounded-md border border-base-300/60 bg-base-200/30 px-4 py-3.5 text-sm text-base-content/75 leading-snug">
+            Python, TypeScript, SQL, Git, AWS, LLMs (prompt design, evaluation,
+            agents)
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className={sectionTitle}>Professional experience</h2>
+
+          <div className={jobBlock}>
+            <div className={jobHead}>
+              <h3 className={`${jobTitle} m-0`}>
+                Senior Software Engineer, Niche AI
+              </h3>
+              <p className={`${jobWhen} m-0`}>2025–now</p>
+            </div>
+            <ul className={bullets}>
+              <li className={bulletItem}>
+                Owned system prompts and behavioral rules for production Voice
+                AI agents, iterating on failures to improve reliability, safety,
+                and policy compliance.
               </li>
-              <li>
-                Engineered data migration scripts facilitating smooth transition
-                from graph databases to relational databases.
+              <li className={bulletItem}>
+                Designed multi-step and meta-prompt workflows, including agent
+                handoffs and context injection from business data and live
+                services.
+              </li>
+              <li className={bulletItem}>
+                Built backend systems and integrations supporting agent
+                workflows, tool use, evaluation, and deployment.
               </li>
             </ul>
-            <p className="mb-1 font-medium">
-              Software Engineer, Elogic, Ltd. (2019-2023)
-            </p>
-            <ul className="list-disc list-inside">
-              <li>
-                Developed a web application for teaching first-order logic
-                employing React, TypeScript, Tailwind, Python, and Google Cloud.
+          </div>
+
+          <div className={jobBlock}>
+            <div className={jobHead}>
+              <div>
+                <h3 className={`${jobTitle} m-0`}>
+                  AI Expert Contributor, Snorkel AI
+                </h3>
+                <p className="m-0 mt-1 text-xs font-normal text-base-content/50">
+                  6-month contract
+                </p>
+              </div>
+              <p className={`${jobWhen} m-0 sm:text-right`}>2025</p>
+            </div>
+            <ul className={bullets}>
+              <li className={bulletItem}>
+                Applied expertise in philosophy, logic, and linguistics to
+                develop a specialized evaluation benchmark for language models.
               </li>
-              <li>
+            </ul>
+          </div>
+
+          <div className={jobBlock}>
+            <div className={jobHead}>
+              <h3 className={`${jobTitle} m-0`}>
+                Software Engineer, GraphFM, Inc.
+              </h3>
+              <p className={`${jobWhen} m-0`}>2023–2025</p>
+            </div>
+            <ul className={bullets}>
+              <li className={bulletItem}>
+                Built scalable Python/FastAPI backends with integrations to AWS
+                services (Lambda, S3, EC2) and third-party APIs, emphasizing
+                reliability, maintainability, and thorough testing.
+              </li>
+              <li className={bulletItem}>
+                Developed LLM-powered pipelines for document ingestion,
+                summarization, and knowledge extraction, including prompt design,
+                agent orchestration, and output evaluation.
+              </li>
+            </ul>
+          </div>
+
+          <div className={jobBlock}>
+            <div className={jobHead}>
+              <h3 className={`${jobTitle} m-0`}>
+                Software Engineer, Elogic, Ltd.
+              </h3>
+              <p className={`${jobWhen} m-0`}>2019–2023</p>
+            </div>
+            <ul className={bullets}>
+              <li className={bulletItem}>
+                Developed a web application for teaching first-order logic
+                employing React, TypeScript, Tailwind, Python, Firebase, and
+                Google Cloud.
+              </li>
+              <li className={bulletItem}>
                 Leveraged Z3 API with Python to verify logical equivalence and
                 produce models.
               </li>
             </ul>
-            {/* <p className="mt-2 mb-1 font-medium">
-              Associated Faculty in Computer Science, Oregon State University -
-              Cascades (2023-now)
-            </p>
-            <ul className="list-disc list-inside">
-              <li>
-                Designed and delivered a class on technology and ethical issues
-                related to artificial intelligence.
-              </li>
-              <li>
-                Made educational content on multi-tier web applications using,
-                e.g., Python, React.
-              </li>
-            </ul> */}
+          </div>
 
-            <p className="mt-2 mb-1 font-medium">
-              Associate Professor in PPLS, University of Edinburgh (2013-2023)
-            </p>
-            <ul className="list-disc list-inside">
-              <li>
-                Published 30+ articles in top-tier peer reviewed journals.
-              </li>
-              <li>
-                Managed large teaching team for Symbolic Logic with 400+
-                students.
+          <div className={jobBlock}>
+            <div className={jobHead}>
+              <h3 className={`${jobTitle} m-0`}>
+                Professor, University of Edinburgh
+              </h3>
+              <p className={`${jobWhen} m-0`}>2013–2023</p>
+            </div>
+            <ul className={bullets}>
+              <li className={bulletItem}>
+                Published 30+ peer-reviewed articles across logic, ethics, and
+                linguistics; taught courses from formal semantics to AI ethics.
               </li>
             </ul>
           </div>
+        </section>
 
-          <div className="mt-4">
-            <h2 className="text-2xl font-bold mb-2">Education</h2>
-
-            <p className="mt-2 mb-1 font-semibold">
-              Australian National University, PhD (2012)
-            </p>
-            <ul className="list-disc list-inside">
-              <li>Area of specialization: Natural language and logic</li>
-              <li>
-                Dissertation title: The semantics of contextual shifting and
-                sensitivity
+        <section>
+          <h2 className={sectionTitle}>Education</h2>
+          <div className={jobBlock}>
+            <div className={jobHead}>
+              <h3 className={`${jobTitle} m-0`}>
+                Australian National University, PhD
+              </h3>
+              <p className={`${jobWhen} m-0`}>2012</p>
+            </div>
+            <ul className={bullets}>
+              <li className={bulletItem}>
+                Philosophy with specialization in formal semantics and logic
               </li>
-            </ul>
-
-            <p className="mt-2 mb-1 font-semibold">
-              University of Colorado, Boulder, MA in Philosophy (2004)
-            </p>
-            <p className="mb-1 font-semibold">
-              University of Oregon, BA in Philosophy (2002)
-            </p>
-          </div>
-          <div className="mt-4">
-            <h2 className="text-2xl font-bold mb-2">Certifications </h2>
-            <p className="mb-1 font-semibold">
-              Advanced Software Engineering Certificate, Hack Reactor
-            </p>
-            <ul className="list-disc list-inside">
-              <li>
-                Constructed full-stack architectures with microservices and
-                RESTful APIs.
-              </li>
-              <li>
-                Demonstrated expertise in building dynamic user interfaces with
-                React.
-              </li>
+              <li className={bulletItem}>Supervisor: David Chalmers</li>
             </ul>
           </div>
-          <div className="mt-4">
-            <h2 className="text-2xl font-bold mb-2">Technical Skills</h2>
-            <ul className="list-disc list-inside">
-              <li>React, TypeScript, JavaScript, HTML, CSS, Tailwind</li>
-              <li>Python, Django, FastAPI, SQL, MongoDB, Docker, Git</li>
-            </ul>
-          </div>
-        </div>
-      </main>
-      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
-        <div>
-          <div className="tooltip" data-tip="to top">
-            <button
-              onClick={() => {
-                window.scrollTo(0, 0);
-              }}
-            >
-              <FaArrowAltCircleUp />
-            </button>
-          </div>
-          <p>© 2023 rabern - brian.rabern@gmail.com</p>
-        </div>
-      </footer>
-    </>
+          <p className="m-0 font-sans text-base font-semibold text-base-content">
+            University of Colorado Boulder (MA); University of Oregon (BA)
+          </p>
+        </section>
+      </div>
+
+      <div className="flex justify-center mt-8">
+        <button
+          type="button"
+          className="text-base-content/45 hover:text-base-content/70 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded p-2"
+          onClick={() => window.scrollTo(0, 0)}
+          aria-label="Back to top"
+        >
+          <FaArrowAltCircleUp className="text-xl" />
+        </button>
+      </div>
+    </main>
   );
 };
 

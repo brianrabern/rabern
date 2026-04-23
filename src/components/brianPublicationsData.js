@@ -1,5 +1,72 @@
 const brianPublicationsData = [
   {
+    year: "forthcoming",
+    title: "A Compositional Semantics for Venn Diagrams",
+    journal: "Linguistics and Philosophy",
+    author: "Bryan Pickel and Brian Rabern",
+    ENTRYTYPE: "article",
+    ID: "PickelForthcoming-PICACS",
+    bibtex:
+      "@article{PickelForthcoming-PICACS,\n\tauthor = {Bryan Pickel and Brian Rabern},\n\tjournal = {Linguistics and Philosophy},\n\ttitle = {A Compositional Semantics for Venn Diagrams},\n\tyear = {forthcoming}\n}\n",
+    url: "https://scholar.google.com/scholar?q=A%20Compositional%20Semantics%20for%20Venn%20Diagrams",
+  },
+  {
+    year: "forthcoming",
+    title: "Variabilism in Light of Naming and Necessity",
+    booktitle: "50 Years of Naming and Necessity",
+    publisher: "Oxford University Press",
+    editor:
+      "Corine Besson and Anandi Hattiangadi and Romina Padro and Antonella Mallozzi",
+    author: "Anders J. Schoubye and Brian Rabern",
+    ENTRYTYPE: "incollection",
+    ID: "SchoubyeForthcoming-SCHVIL-2",
+    bibtex:
+      "@incollection{SchoubyeForthcoming-SCHVIL-2,\n\tauthor = {Anders J. Schoubye and Brian Rabern},\n\tbooktitle = {50 Years of Naming and Necessity},\n\teditor = {Corine Besson and Anandi Hattiangadi and Romina Padro and Antonella Mallozzi},\n\tpublisher = {Oxford University Press},\n\ttitle = {Variabilism in Light of \\\\emph{Naming and Necessity}},\n\tyear = {forthcoming}\n}\n",
+    url: "https://scholar.google.com/scholar?q=Variabilism%20in%20Light%20of%20Naming%20and%20Necessity%20Rabern%20Schoubye",
+  },
+  {
+    year: "2024",
+    title: "David Lewis’s Metaphysics",
+    booktitle: "The Stanford Encyclopedia of Philosophy",
+    editor: "Edward N. Zalta and Uri Nodelman",
+    author: "Ned Hall and Brian Rabern and Wolfgang Schwarz",
+    ENTRYTYPE: "incollection",
+    ID: "Hall2024-HALDLM",
+    bibtex:
+      "@incollection{Hall2024-HALDLM,\n    year = {2024},\n    title = {David Lewis’s Metaphysics},\n    booktitle = {The Stanford Encyclopedia of Philosophy},\n    editor = {Edward N. Zalta and Uri Nodelman},\n    author = {Ned Hall and Brian Rabern and Wolfgang Schwarz},\n    url = {https://plato.stanford.edu/archives/spr2024/entries/lewis-metaphysics/}\n}\n\n",
+    url: "https://plato.stanford.edu/archives/spr2024/entries/lewis-metaphysics/",
+  },
+  {
+    year: "2025",
+    title: "A Formal Semantics for Wittgenstein's Builder Language",
+    journal: "Revista Portuguesa de Filosofia",
+    volume: "81",
+    number: "4",
+    pages: "1195--1210",
+    doi: "10.17990/RPF/2025_81_4_1195",
+    author: "Brian Rabern",
+    ENTRYTYPE: "article",
+    ID: "Rabern2025-RABAFS",
+    bibtex:
+      "@article{Rabern2025-RABAFS,\n\tauthor = {Brian Rabern},\n\tjournal = {Revista Portuguesa de Filosofia},\n\tnumber = {4},\n\tpages = {1195--1210},\n\ttitle = {A Formal Semantics for Wittgenstein's Builder Language},\n\tvolume = {81},\n\tyear = {2025}\n}\n",
+    url: "https://doi.org/10.17990/RPF/2025_81_4_1195",
+  },
+  {
+    year: "2023",
+    title: "За игрой в карты с чертиком Визинга",
+    journal: "Kvant",
+    volume: "2023",
+    number: "10",
+    pages: "2--6",
+    doi: "10.4213/kvant20231001",
+    author: "Brian Rabern and Landon Rabern",
+    ENTRYTYPE: "article",
+    ID: "Rabern2023-RABEZU",
+    bibtex:
+      "@article{Rabern2023-RABEZU,\n\tauthor = {Brian Rabern and Landon Rabern},\n\tjournal = {Kvant},\n\tnumber = {10},\n\tpages = {2--6},\n\ttitle = {\\\\CYRZ\\\\cyra \\\\CYRI\\\\cyrg\\\\cyrr\\\\cyro\\\\cyrishrt \\\\CYRV \\\\CYRK\\\\cyra\\\\cyrr\\\\cyrt\\\\cyrery \\\\CYRS \\\\CYRCH\\\\cyre\\\\cyrr\\\\cyrt\\\\cyri\\\\cyrk\\\\cyro\\\\cyrm \\\\CYRV\\\\cyri\\\\cyrz\\\\cyri\\\\cyrn\\\\cyrg\\\\cyra},\n\tvolume = {2023},\n\tyear = {2023},\n\tdoi = {10.4213/kvant20231001}\n}\n",
+    url: "https://philpapers.org/go.pl?id=RABEZU&proxyId=none&u=https%3A%2F%2Fdoi.org%2F10.4213%2Fkvant20231001",
+  },
+  {
     year: "2023",
     volume: "44",
     title: "A Puzzle About Scope for Restricted Deontic Modals",
@@ -80,12 +147,13 @@ const brianPublicationsData = [
     title: "Scorekeeping in a Chess Game",
     number: "12",
     journal: "Semantics and Pragmatics",
+    doi: "10.3765/sp.15.12",
     author: "Bryan Pickel and Brian Rabern",
     ENTRYTYPE: "article",
     ID: "Pickel2022-PICSIA",
     bibtex:
-      "@article{Pickel2022-PICSIA,\n    year = {2022},\n    volume = {15},\n    title = {Scorekeeping in a Chess Game},\n    number = {12},\n    journal = {Semantics and Pragmatics},\n    author = {Bryan Pickel and Brian Rabern}\n}\n\n",
-    url: "https://philpapers.org/rec/PICSIA",
+      "@article{Pickel2022-PICSIA,\n    year = {2022},\n    volume = {15},\n    title = {Scorekeeping in a Chess Game},\n    number = {12},\n    journal = {Semantics and Pragmatics},\n    doi = {10.3765/sp.15.12},\n    author = {Bryan Pickel and Brian Rabern}\n}\n\n",
+    url: "https://philpapers.org/go.pl?id=PICSIA&proxyId=none&u=https%3A%2F%2Fdoi.org%2F10.3765%2Fsp.15.12",
   },
   {
     year: "2022",
@@ -117,6 +185,17 @@ const brianPublicationsData = [
     bibtex:
       "@article{Rabern2021-RABBBV,\n    year = {2021},\n    volume = {64},\n    title = {Binding Bound Variables in Epistemic Contexts},\n    publisher = {Routledge},\n    pages = {533--563},\n    number = {5-6},\n    journal = {Inquiry: An Interdisciplinary Journal of Philosophy},\n    doi = {10.1080/0020174x.2018.1470568},\n    author = {Brian Rabern}\n}\n\n",
     url: "https://philpapers.org/rec/RABBBV",
+  },
+  {
+    year: "2021",
+    title: "Structural fixed-point theorems",
+    journal: "arXiv",
+    author: "Brian Rabern and Landon Rabern",
+    ENTRYTYPE: "misc",
+    ID: "rabern2021structuralfixedpointtheorems",
+    bibtex:
+      "@misc{rabern2021structuralfixedpointtheorems,\n      title={Structural fixed-point theorems}, \n      author={Brian Rabern and Landon Rabern},\n      year={2021},\n      eprint={2104.04626},\n      archivePrefix={arXiv},\n      primaryClass={math.CO},\n      url={https://arxiv.org/abs/2104.04626}, \n}\n",
+    url: "https://arxiv.org/abs/2104.04626",
   },
   {
     year: "2021",
@@ -184,12 +263,13 @@ const brianPublicationsData = [
     title: "Might Generics",
     pages: "8--9",
     journal: "Snippets",
+    doi: "10.7358/snip-2020-039-rabe",
     author: "Brian Rabern",
     ENTRYTYPE: "article",
     ID: "Rabern2020-RABMG",
     bibtex:
-      "@article{Rabern2020-RABMG,\n    year = {2020},\n    volume = {39},\n    title = {Might Generics},\n    pages = {8--9},\n    journal = {Snippets},\n    author = {Brian Rabern}\n}\n\n",
-    url: "https://philpapers.org/rec/RABMG",
+      "@article{Rabern2020-RABMG,\n    year = {2020},\n    volume = {39},\n    title = {Might Generics},\n    pages = {8--9},\n    journal = {Snippets},\n    doi = {10.7358/snip-2020-039-rabe},\n    author = {Brian Rabern}\n}\n\n",
+    url: "https://philpapers.org/go.pl?id=RABMG&proxyId=5345&u=http%3A%2F%2Fdx.doi.org%2F10.7358%2Fsnip-2020-039-rabe",
   },
   {
     year: "2019",
@@ -287,12 +367,13 @@ const brianPublicationsData = [
       "The History of the Use of ⟦.⟧-Notation in Natural Language Semantics",
     number: "12",
     journal: "Semantics and Pragmatics",
+    doi: "10.3765/sp.9.12",
     author: "Brian Rabern",
     ENTRYTYPE: "article",
     ID: "Rabern2016-RABTHO-2",
     bibtex:
-      "@article{Rabern2016-RABTHO-2,\n    year = {2016},\n    volume = {9},\n    title = {The History of the Use of ?.?-Notation in Natural Language Semantics},\n    number = {12},\n    journal = {Semantics and Pragmatics},\n    author = {Brian Rabern}\n}\n\n",
-    url: "https://philpapers.org/rec/RABTHO-2",
+      "@article{Rabern2016-RABTHO-2,\n    year = {2016},\n    volume = {9},\n    title = {The History of the Use of ⟦.⟧-Notation in Natural Language Semantics},\n    number = {12},\n    journal = {Semantics and Pragmatics},\n    doi = {10.3765/sp.9.12},\n    author = {Brian Rabern}\n}\n\n",
+    url: "https://philpapers.org/go.pl?id=RABTHO-2&proxyId=5345&u=http%3A%2F%2Fdx.doi.org%2F10.3765%2Fsp.9.12",
   },
   {
     year: "2016",

@@ -1,10 +1,7 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { themeChange } from "theme-change";
-import Nav from "../components/Nav.jsx";
-import Typewriter from "typewriter-effect";
-import TalkCard from "../components/TalkCard.jsx";
-import CourseCard from "../components/CourseCard.jsx";
+import { useState } from "react";
+import TalkList from "../components/TalkList.jsx";
+import CourseList from "../components/CourseList.jsx";
 import talkData from "../components/talkData.js";
 import teachingData from "../components/teachingData.js";
 import { FaArrowAltCircleUp } from "react-icons/fa";
@@ -14,113 +11,87 @@ const talks = talkData || [];
 const courses = teachingData || [];
 
 const Talking = () => {
-  useEffect(() => {
-    themeChange(false);
-  }, []);
-  //   useEffect(() => {
-  //     // set default theme on this page
-  //     localStorage.setItem("theme", "bumblebee");
-  //   }, []);
+  const [teachingMode, setTeachingMode] = useState(false);
 
-  const [toggle, setToggle] = useState(true);
-
-  function toggleIt() {
-    setToggle(!toggle);
-  }
   return (
-    <main>
-      <section className="px-10">
-        <Nav> </Nav>
-        <h3 className="text-3xl text-primary font-medium py-2">
-          <code className="h-10 flex items-center justify-center">
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
+    <main className="pb-12">
+      <header className="mb-8">
+        <h1 className="font-mono text-2xl uppercase tracking-[0.1em] text-primary">
+          Teaching & presentations
+        </h1>
+      </header>
 
-                  .typeString("blahblah")
-
-                  .pauseFor(600)
-                  .deleteAll()
-                  .typeString("Talking")
-
-                  .start();
-              }}
+      <section className="console-panel p-4 sm:p-5 mb-6">
+        <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between">
+          {!teachingMode ? (
+            <img
+              src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/jowett.jpeg"
+              alt=""
+              className="w-28 h-28 sm:w-24 sm:h-24 rounded-xl object-cover border border-base-300/60"
             />
-          </code>
-        </h3>
+          ) : (
+            <img
+              src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/me_talking.jpeg"
+              alt=""
+              className="w-28 h-28 sm:w-24 sm:h-24 rounded-xl object-cover border border-base-300/60"
+            />
+          )}
+
+          <div className="form-control flex flex-row items-center justify-center gap-3">
+            <span className="font-mono text-xs uppercase tracking-wider text-base-content/50">
+              Teaching
+            </span>
+            <input
+              type="checkbox"
+              className="toggle toggle-primary"
+              checked={!teachingMode}
+              onChange={(e) => setTeachingMode(!e.target.checked)}
+              aria-label="Switch between teaching and presentations"
+            />
+            <span className="font-mono text-xs uppercase tracking-wider text-base-content/50">
+              Presentations
+            </span>
+          </div>
+        </div>
       </section>
 
-      {!toggle && (
-        <img
-          src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/jowett.jpeg"
-          alt="me talking"
-          className="w-48 h-48 rounded-full mx-auto my-4"
-        />
-      )}
-      {toggle && (
-        <img
-          src="https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/me_talking.jpeg"
-          alt="me talking"
-          className="w-48 h-48 rounded-full mx-auto my-"
-        />
-      )}
-      {toggle && (
-        <div className="ml-4">
-          <Link to="awards/">
-            <span className="badge badge-secondary">Teaching Awards</span>
-          </Link>
-        </div>
-      )}
-      <div className="form-control text-center mb-4">
-        <label className="label cursor-pointer d-flex align-center justify-center">
-          <p className="px-1 text-xl text-gray-600">teaching</p>
-          <input
-            type="checkbox"
-            className="toggle toggle-secondary"
-            onClick={toggleIt}
-            // defaultChecked
-          />
-          <p className="px-1 text-xl  text-gray-600">presentations</p>
-        </label>
-      </div>
-      {!toggle && (
+      {!teachingMode ? (
         <>
-          <div className="mb-2 text-2xl text-primary flex items-center justify-center">
+          <h2 className="font-mono text-center text-[11px] uppercase tracking-[0.2em] text-base-content/50 mb-4">
             Presentations
-          </div>
-          <div>
-            {talks.map((talk, index) => (
-              <TalkCard key={index} talk={talk} />
-            ))}
-          </div>
+          </h2>
+          <TalkList talks={talks} />
         </>
-      )}
-      {toggle && (
+      ) : (
         <>
-          <div className="mb-2 text-2xl text-primary flex items-center justify-center">
+          <h2 className="font-mono text-center text-[11px] uppercase tracking-[0.2em] text-base-content/50 mb-4">
             Courses
-          </div>
-          <div className="ml-4 mr-4 flex flex-wrap items-center justify-center">
-            {courses.map((course, index) => (
-              <CourseCard key={index} course={course} />
-            ))}
-          </div>
+          </h2>
+          <CourseList
+            courses={courses}
+            rightAction={
+              <Link
+                to="/talking/awards"
+                className="inline-flex items-center rounded border border-base-300 bg-base-100/25 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-base-content/55 no-underline hover:text-primary hover:border-primary/40 hover:bg-base-200/40 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary"
+                title="Teaching awards"
+              >
+                awards
+              </Link>
+            }
+          />
         </>
       )}
-      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
-        <div>
-          <div className="tooltip" data-tip="to top">
-            <button
-              onClick={() => {
-                window.scrollTo(0, 0);
-              }}
-            >
-              <FaArrowAltCircleUp />
-            </button>
-          </div>
-          <p>© 2023 rabern - brian.rabern@gmail.com</p>
-        </div>
-      </footer>
+
+      <div className="flex justify-center mt-10">
+        <button
+          type="button"
+          className="text-base-content/45 hover:text-base-content/70 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded p-2"
+          onClick={() => window.scrollTo(0, 0)}
+          aria-label="Back to top"
+        >
+          <FaArrowAltCircleUp className="text-xl" />
+        </button>
+      </div>
     </main>
   );
 };

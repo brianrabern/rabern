@@ -1,0 +1,35 @@
+{
+  "updatedAt": "2026-04-22T12:00:00.000Z",
+  "items": [
+    {
+      "kind": "talk",
+      "summary": "Upcoming talk at Deschutes Tech Guild: \"Your Digital Twin and Rational Choice.\"",
+      "href": "https://www.meetup.com/deschutes-tech-guild/",
+      "date": "2026-05"
+    },
+    {
+      "kind": "paper",
+      "summary": "Forthcoming: \"A Compositional Semantics for Venn Diagrams\" (Linguistics and Philosophy).",
+      "href": "https://philpapers.org/rec/PICACS",
+      "date": "2026-04"
+    },
+    {
+      "kind": "paper",
+      "summary": "LogicSkills: A Structured Benchmark for Formal Reasoning in Large Language Models (draft on arXiv).",
+      "href": "https://arxiv.org/abs/2602.06533",
+      "date": "2026-02"
+    },
+    {
+      "kind": "paper",
+      "summary": "\"A formal semantics for Wittgenstein's builder language,\" Revista Portuguesa de Filosofia 81 (4): 1195–1210 (2025).",
+      "href": "https://doi.org/10.17990/RPF/2025_81_4_1195",
+      "date": "2025-12"
+    },
+    {
+      "kind": "other",
+      "summary": "Logic questions included in Humanity's Last Exam, an expert-level academic benchmark for AI (Nature).",
+      "href": "https://www.nature.com/articles/s41586-025-09962-4",
+      "date": "2026-01"
+    }
+  ]
+}

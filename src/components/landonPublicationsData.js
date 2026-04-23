@@ -65,14 +65,14 @@ const landonPublicationsData = [
   },
   {
     url: "https://arxiv.org/abs/2104.04626",
-    journal: "arXiv preprint arXiv:2104.04626",
+    journal: "arXiv",
     year: "2021",
     author: "Rabern, Brian and Rabern, Landon",
     title: "Structural fixed-point theorems",
     ENTRYTYPE: "article",
     ID: "rabern2021structural",
     bibtex:
-      "@article{rabern2021structural,\n    url = {https://arxiv.org/abs/2104.04626},\n    journal = {arXiv preprint arXiv:2104.04626},\n    year = {2021},\n    author = {Rabern, Brian and Rabern, Landon},\n    title = {Structural fixed-point theorems}\n}\n\n",
+      "@article{rabern2021structural,\n    url = {https://arxiv.org/abs/2104.04626},\n    journal = {arXiv},\n    year = {2021},\n    author = {Rabern, Brian and Rabern, Landon},\n    title = {Structural fixed-point theorems}\n}\n\n",
   },
   {
     url: "https://doi.org/10.1016/j.jctb.2019.05.004",
@@ -344,14 +344,14 @@ const landonPublicationsData = [
   {
     keyword: "unpublished",
     url: "https://arxiv.org/abs/1507.05600",
-    journal: "arXiv:1507.05600",
+    journal: "arXiv",
     year: "2015",
     author: "Rabern, Landon",
     title: "Edge-coloring via fixable subgraphs",
     ENTRYTYPE: "article",
     ID: "rabern2015edge",
     bibtex:
-      "@article{rabern2015edge,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/1507.05600},\n    journal = {arXiv:1507.05600},\n    year = {2015},\n    author = {Rabern, Landon},\n    title = {Edge-coloring via fixable subgraphs}\n}\n\n",
+      "@article{rabern2015edge,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/1507.05600},\n    journal = {arXiv},\n    year = {2015},\n    author = {Rabern, Landon},\n    title = {Edge-coloring via fixable subgraphs}\n}\n\n",
   },
   {
     url: "https://doi.org/10.1016/j.disc.2013.12.010",
@@ -531,26 +531,26 @@ const landonPublicationsData = [
   {
     keyword: "unpublished",
     url: "https://arxiv.org/abs/1102.1021",
-    journal: "arXiv:1102.1021",
+    journal: "arXiv",
     year: "2011",
     author: "Rabern, Landon",
     title: "{An improvement on Brooks' theorem}",
     ENTRYTYPE: "article",
     ID: "rabern2011improvement",
     bibtex:
-      "@article{rabern2011improvement,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/1102.1021},\n    journal = {arXiv:1102.1021},\n    year = {2011},\n    author = {Rabern, Landon},\n    title = {{An improvement on Brooks' theorem}}\n}\n\n",
+      "@article{rabern2011improvement,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/1102.1021},\n    journal = {arXiv},\n    year = {2011},\n    author = {Rabern, Landon},\n    title = {{An improvement on Brooks' theorem}}\n}\n\n",
   },
   {
     keyword: "unpublished",
     url: "https://arxiv.org/abs/1107.1735",
-    journal: "arXiv:1107.1735",
+    journal: "arXiv",
     year: "2011",
     author: "Rabern, Landon",
     title: "A note on vertex partitions",
     ENTRYTYPE: "article",
     ID: "rabern2011note",
     bibtex:
-      "@article{rabern2011note,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/1107.1735},\n    journal = {arXiv:1107.1735},\n    year = {2011},\n    author = {Rabern, Landon},\n    title = {A note on vertex partitions}\n}\n\n",
+      "@article{rabern2011note,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/1107.1735},\n    journal = {arXiv},\n    year = {2011},\n    author = {Rabern, Landon},\n    title = {A note on vertex partitions}\n}\n\n",
   },
   {
     url: "https://doi.org/10.1002/jgt.20487",
@@ -598,14 +598,14 @@ const landonPublicationsData = [
   {
     keyword: "unpublished",
     url: "https://arxiv.org/abs/0808.0844",
-    journal: "arXiv:0808.0844",
+    journal: "arXiv",
     year: "2008",
     author: "Matthew Macauley and Brian Rabern and Landon Rabern",
     title: "{A Novel Proof of the Heine-Borel Theorem}",
     ENTRYTYPE: "article",
     ID: "macauley2008novel",
     bibtex:
-      "@article{macauley2008novel,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/0808.0844},\n    journal = {arXiv:0808.0844},\n    year = {2008},\n    author = {Matthew Macauley and Brian Rabern and Landon Rabern},\n    title = {{A Novel Proof of the Heine-Borel Theorem}}\n}\n\n",
+      "@article{macauley2008novel,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/0808.0844},\n    journal = {arXiv},\n    year = {2008},\n    author = {Matthew Macauley and Brian Rabern and Landon Rabern},\n    title = {{A Novel Proof of the Heine-Borel Theorem}}\n}\n\n",
   },
   {
     url: "https://doi.org/10.1137/060659193",
@@ -670,19 +670,19 @@ const landonPublicationsData = [
   {
     keyword: "unpublished",
     url: "https://arxiv.org/abs/0707.1069",
-    journal: "arXiv:0707.1069",
+    journal: "arXiv",
     year: "2007",
     author: "Rabern, Landon",
     title: "Coloring and The Lonely Graph",
     ENTRYTYPE: "article",
     ID: "rabern2007coloring",
     bibtex:
-      "@article{rabern2007coloring,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/0707.1069},\n    journal = {arXiv:0707.1069},\n    year = {2007},\n    author = {Rabern, Landon},\n    title = {Coloring and The Lonely Graph}\n}\n\n",
+      "@article{rabern2007coloring,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/0707.1069},\n    journal = {arXiv},\n    year = {2007},\n    author = {Rabern, Landon},\n    title = {Coloring and The Lonely Graph}\n}\n\n",
   },
   {
     keyword: "unpublished",
     url: "https://arxiv.org/abs/0708.2956",
-    journal: "arXiv:0708.2956",
+    journal: "arXiv",
     year: "2007",
     author: "Rabern, Landon",
     title:
@@ -690,7 +690,7 @@ const landonPublicationsData = [
     ENTRYTYPE: "article",
     ID: "rabern2007least",
     bibtex:
-      "@article{rabern2007least,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/0708.2956},\n    journal = {arXiv:0708.2956},\n    year = {2007},\n    author = {Rabern, Landon},\n    title = {At Least Half Of All Graphs Satisfy $\\chi\\leq {\\frac{1}{4}}\\omega+ {\\frac{3}{4}}\\Delta + 1$}\n}\n\n",
+      "@article{rabern2007least,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/0708.2956},\n    journal = {arXiv},\n    year = {2007},\n    author = {Rabern, Landon},\n    title = {At Least Half Of All Graphs Satisfy $\\chi\\leq {\\frac{1}{4}}\\omega+ {\\frac{3}{4}}\\Delta + 1$}\n}\n\n",
   },
   {
     url: "https://doi.org/10.1137/050626545",
@@ -710,19 +710,19 @@ const landonPublicationsData = [
   {
     keyword: "unpublished",
     url: "https://arxiv.org/abs/math/0606632",
-    journal: "arXiv:math/0606632",
+    journal: "arXiv",
     year: "2006",
     author: "Rabern, Landon",
     title: "New upper bounds on the chromatic number of a graph",
     ENTRYTYPE: "article",
     ID: "rabern2006new",
     bibtex:
-      "@article{rabern2006new,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/math/0606632},\n    journal = {arXiv:math/0606632},\n    year = {2006},\n    author = {Rabern, Landon},\n    title = {New upper bounds on the chromatic number of a graph}\n}\n\n",
+      "@article{rabern2006new,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/math/0606632},\n    journal = {arXiv},\n    year = {2006},\n    author = {Rabern, Landon},\n    title = {New upper bounds on the chromatic number of a graph}\n}\n\n",
   },
   {
     keyword: "unpublished",
     url: "https://arxiv.org/abs/math/0512291",
-    journal: "arXiv:math/0512291",
+    journal: "arXiv",
     year: "2005",
     author: "Rabern, Landon",
     title:
@@ -730,7 +730,7 @@ const landonPublicationsData = [
     ENTRYTYPE: "article",
     ID: "rabern2005some",
     bibtex:
-      "@article{rabern2005some,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/math/0512291},\n    journal = {arXiv:math/0512291},\n    year = {2005},\n    author = {Rabern, Landon},\n    title = {Some bounds on convex combinations of $\\omega$ and $\\chi$ for decompositions into many parts}\n}\n\n",
+      "@article{rabern2005some,\n    keyword = {unpublished},\n    url = {https://arxiv.org/abs/math/0512291},\n    journal = {arXiv},\n    year = {2005},\n    author = {Rabern, Landon},\n    title = {Some bounds on convex combinations of $\\omega$ and $\\chi$ for decompositions into many parts}\n}\n\n",
   },
   {
     url: "https://scholar.rose-hulman.edu/rhumj/vol4/iss1/3/",

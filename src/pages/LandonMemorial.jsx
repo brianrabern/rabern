@@ -1,177 +1,240 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import landonMemorialData from "../components/landonMemorialData.js";
 import graphs_header2 from "./assets/graphs_header2.png";
 import lwr_beach from "./assets/lwr_beach.jpg";
-import { themeChange } from "theme-change";
 import MemoryCard from "../components/MemoryCard.jsx";
+import LandonSubnav from "../components/LandonSubnav.jsx";
+import GraphMotifBackdrop from "../components/GraphMotifBackdrop.jsx";
+import {
+  landonSurface as surface,
+  landonSurfaceNoBorder as surfaceNoBorder,
+  landonIconBtn as iconBtn,
+  landonLink as linkCls,
+  landonColumn,
+} from "../landon/landonShared.js";
 
 const memories = landonMemorialData || [];
 const PHOTOBOXSIZE = 27;
-const photos = [];
+const memorialPhotos = [];
 
 for (let i = 1; i <= PHOTOBOXSIZE; i++) {
-  photos.push({
-    type: "photo",
-    src: require(`./assets/memorialPhotos/photo${i}.jpeg`),
-  });
+  memorialPhotos.push(require(`./assets/memorialPhotos/photo${i}.jpeg`));
 }
 
-// const photos = [
-//   { type: "photo", src: require("./assets/memorialPhotos/photo1.jpeg") },
-//   { type: "photo", src: require("./assets/memorialPhotos/photo2.jpeg") },
-//   { type: "photo", src: require("./assets/memorialPhotos/photo3.jpeg") },
-//   { type: "photo", src: require("./assets/memorialPhotos/photo4.png") },
+const carouselChrome =
+  "rounded-2xl border border-base-300 bg-base-200/25 backdrop-blur-sm p-3 sm:p-4 outline-none focus-visible:ring-2 focus-visible:ring-primary/45";
 
-//   // Add more photos as needed
-// ];
+/** Inside a striped `surface` card — no outer border (parent provides frame) */
+const carouselChromeEmbedded =
+  "rounded-xl bg-base-200/20 p-3 sm:p-4 outline-none focus-visible:ring-2 focus-visible:ring-primary/45";
 
-// Create an interleaved array
-const interleavedArray = [];
-for (let i = 0; i < Math.max(photos.length, memories.length); i++) {
-  if (i < memories.length) {
-    interleavedArray.push(memories[i]);
-  }
-  if (i < photos.length) {
-    interleavedArray.push(photos[i]);
-  }
-}
-console.log(interleavedArray);
-const LandonMemorial = () => {
-  useEffect(() => {
-    themeChange(false);
-  }, []);
-  // useEffect(() => {
-  //   // set default theme on this page
-  //   localStorage.setItem("theme", "dark");
-  // }, []);
+function LandonCarouselShell({
+  ariaLabel,
+  prevAria,
+  nextAria,
+  index,
+  n,
+  prev,
+  next,
+  children,
+  className = "",
+  embedded = false,
+}) {
+  const onKeyDown = useCallback(
+    (e) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        prev();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        next();
+      }
+    },
+    [prev, next]
+  );
+
+  if (n === 0) return null;
+
+  const chrome = embedded ? carouselChromeEmbedded : carouselChrome;
 
   return (
-    <main>
-      <nav className="px-4 py-8 mb-12 flex justify-between items-center">
-        <div className="tooltip" data-tip="mood?">
-          <ul className="justify-end">
-            <li>
-              {" "}
-              <input
-                data-set-theme="business"
-                data-act-class="ACTIVECLASS"
-                type="radio"
-                name="theme"
-                className="radio"
-                id="business-radio"
-              />
-              <input
-                data-set-theme="coffee"
-                data-act-class="ACTIVECLASS"
-                type="radio"
-                name="theme"
-                className="radio"
-              />
-              <input
-                data-set-theme="dark"
-                data-act-class="ACTIVECLASS"
-                type="radio"
-                name="theme"
-                className="radio"
-              />
-              <input
-                data-set-theme="black"
-                data-act-class="ACTIVECLASS"
-                type="radio"
-                name="theme"
-                className="radio"
-              />
-            </li>
-          </ul>{" "}
+    <div className={className}>
+      <div
+        className={chrome}
+        tabIndex={0}
+        role="region"
+        aria-roledescription="carousel"
+        aria-label={ariaLabel}
+        onKeyDown={onKeyDown}
+      >
+        {children}
+        <div className="mt-3 flex items-center justify-center gap-2 sm:gap-3">
+          <button
+            type="button"
+            className={iconBtn}
+            aria-label={prevAria}
+            onClick={prev}
+          >
+            <IoChevronBack className="text-lg" aria-hidden />
+          </button>
+          <p
+            className="font-mono text-xs sm:text-sm text-base-content/70 m-0 min-w-[5.5rem] text-center tabular-nums"
+            aria-live="polite"
+          >
+            {index + 1} / {n}
+          </p>
+          <button
+            type="button"
+            className={iconBtn}
+            aria-label={nextAria}
+            onClick={next}
+          >
+            <IoChevronForward className="text-lg" aria-hidden />
+          </button>
         </div>
+      </div>
+    </div>
+  );
+}
 
-        <ul className="menu menu-horizontal bg-base-100 rounded-box">
-          <li>
-            <div className="tooltip" data-tip="memorial">
-              <Link to="/landon/memorial">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </li>
-          <li>
-            <div className="tooltip" data-tip="research">
-              <Link to="/landon/research">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </li>
-        </ul>
-      </nav>
-      <div className="bg-gray-100 p-8">
-        <h1 className="text-2xl text-base-300 font-semibold mb-4 text-center">
-          Landon Rabern (1981-2020)
-        </h1>
+function LandonPhotoCarousel({ photos, className = "", embedded = false }) {
+  const [index, setIndex] = useState(0);
+  const n = photos.length;
+  const prev = useCallback(
+    () => setIndex((x) => (x - 1 + n) % n),
+    [n]
+  );
+  const next = useCallback(() => setIndex((x) => (x + 1) % n), [n]);
 
-        <div className="card bg-info m-4">
-          <div className="card-body">
-            <a href="https://landon.github.io/#data">
+  return (
+    <LandonCarouselShell
+      className={className}
+      embedded={embedded}
+      ariaLabel="Memorial photographs"
+      prevAria="Previous photograph"
+      nextAria="Next photograph"
+      index={index}
+      n={n}
+      prev={prev}
+      next={next}
+    >
+        <div className="aspect-[4/3] max-h-[min(52vh,22rem)] sm:max-h-[min(60vh,26rem)] mx-auto rounded-xl overflow-hidden bg-base-300/30 border border-base-300">
+        <img
+          src={photos[index]}
+          alt={`Memorial photograph ${index + 1} of ${n}`}
+          className="h-full w-full object-contain object-center"
+        />
+      </div>
+    </LandonCarouselShell>
+  );
+}
+
+function LandonMemoryCarousel({ items, className = "", embedded = false }) {
+  const [index, setIndex] = useState(0);
+  const n = items.length;
+  const prev = useCallback(
+    () => setIndex((x) => (x - 1 + n) % n),
+    [n]
+  );
+  const next = useCallback(() => setIndex((x) => (x + 1) % n), [n]);
+
+  return (
+    <LandonCarouselShell
+      className={className}
+      embedded={embedded}
+      ariaLabel="Memories from friends and colleagues"
+      prevAria="Previous memory"
+      nextAria="Next memory"
+      index={index}
+      n={n}
+      prev={prev}
+      next={next}
+    >
+      <div className="max-h-[min(70vh,32rem)] overflow-y-auto overscroll-y-contain rounded-xl border border-base-300 bg-base-300/25 px-4 py-4 sm:px-6 sm:py-5">
+        <MemoryCard
+          memory={items[index]}
+          className="border-0 bg-transparent shadow-none backdrop-blur-none px-0 py-0 hover:border-transparent"
+        />
+      </div>
+    </LandonCarouselShell>
+  );
+}
+
+const eyebrow =
+  "font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] text-primary/75 mb-3";
+
+const eyebrowSecondary =
+  "font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] text-secondary mb-3";
+
+const eyebrowInfo =
+  "font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] text-info mb-3";
+
+const LandonMemorial = () => {
+  return (
+    <main
+      data-theme="console"
+      className="relative min-h-screen overflow-x-hidden bg-base-100 text-base-content antialiased"
+    >
+      <GraphMotifBackdrop />
+      <div className="relative z-[1]">
+        <LandonSubnav />
+
+        <div className={`${landonColumn} pb-20 pt-2`}>
+        {/* Article title (Wikipedia-style masthead) */}
+        <header className="mb-8 border-b border-base-300 pb-3">
+          <h1 className="text-[1.65rem] sm:text-[2rem] font-normal text-base-content m-0 leading-tight tracking-tight">
+            Landon Rabern
+          </h1>
+          <p className="text-sm text-base-content/65 m-0 mt-2">
+            (May 7, 1981 – October 19, 2020)
+          </p>
+        </header>
+
+        {/* Biography — graph strip + lead with thumbnail (Wikipedia-style) */}
+        <section
+          className={`${surfaceNoBorder} overflow-hidden pt-5 sm:pt-6 mb-12`}
+          lang="en"
+          aria-label="Biography"
+        >
+          <a
+            href="https://landon.github.io/#data"
+            className="block bg-base-200/35 transition-colors hover:bg-base-200/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary/45"
+            aria-label="Graph diagrams on Landon Rabern's website (opens external site)"
+          >
+            <img
+              src={graphs_header2}
+              alt=""
+              className="block h-auto w-full rounded-xl opacity-95"
+            />
+          </a>
+          <div className="flow-root px-5 sm:px-8 py-5 sm:py-8 text-[15px] sm:text-base text-base-content/88 leading-[1.65] text-justify">
+            <figure className="float-none sm:float-right clear-right mx-auto sm:mx-0 mb-4 sm:mb-2 sm:ml-4 w-full max-w-[200px] sm:max-w-[220px] shrink-0 bg-base-200/50 p-2 rounded-lg">
               <img
-                src={graphs_header2}
-                alt="graphs"
-                className="w-full image-class transform hover:rotate-180"
+                src={require("./assets/LWR.jpeg")}
+                alt="Landon Rabern"
+                className="block w-full h-auto object-cover aspect-[4/5] rounded-md"
               />
-            </a>
-          </div>
-        </div>
-
-        <div className="card bg-gray-300 m-4">
-          <div className="card-body">
-            <p className="text-md ml-4 text-justify text-base-300">
+            </figure>
+            <p className="m-0 mb-5 text-pretty">
               Landon Rabern (May 07, 1981 - October 19, 2020) was a
               mathematician and software engineer. He was most well-known for
               his work on the Borodin-Kostochka conjecture and related topics in
               graph theory.
             </p>
-            <img
-              src={require("./assets/LWR.jpeg")}
-              alt="graph"
-              className="rounded-lg max-w-xs" // Set the image to float left and add some margin
-            />
-            <p className="text-sm ml-4 text-base-300">
+            <p className="m-0 mb-5 text-pretty">
               Landon was born and raised in Roseburg, Oregon. As a child he
               developed a deep interest in computers, machine intelligence, and
               science fiction. Starting in the 1980s with a Commodore 64, and
               making simple programs in BASIC, then Pascal, C, and so on, he
               taught himself how to code. In high school he programmed a chess
-              AI (codenamed "Betsy") and experimented with using neural
+              AI (codenamed &ldquo;Betsy&rdquo;) and experimented with using neural
               networks. This program has been credited as the first published
               chess engine able to play Fischer Random Chess (see{" "}
               <a
                 href="https://www.chessprogramming.org/Landon_Rabern"
-                className="text-blue-500 hover:underline"
+                className={linkCls}
               >
                 here
               </a>
@@ -179,19 +242,19 @@ const LandonMemorial = () => {
               Washington University in St. Louis, spending a year abroad in the
               Netherlands, and then earning a Masters degree in Mathematics at
               UC Santa Barbara. After a few years working as a software
-              engineer, and while working on graph theory "on the side" he
+              engineer, and while working on graph theory &ldquo;on the side&rdquo; he
               proved a conjecture of some prominent mathematicians. He went to
               Arizona State to work with one of them (
               <a
                 href="https://landon.github.io/content/hal/5minutes.html"
-                className="text-blue-500 hover:underline"
+                className={linkCls}
               >
                 Hal Kierstead
               </a>
               ) and finish his PhD (see{" "}
               <a
-                href=" https://drive.google.com/file/d/1864HooDOyEpQaEGlmZXMxLLOP3Jx_xcw/view?usp=sharing"
-                className="text-blue-500 hover:underline"
+                href="https://drive.google.com/file/d/1864HooDOyEpQaEGlmZXMxLLOP3Jx_xcw/view?usp=sharing"
+                className={linkCls}
               >
                 dissertation
               </a>
@@ -210,13 +273,10 @@ const LandonMemorial = () => {
               for example, to the beaches or forests of Oregon. Most
               importantly, he loved his sons, Atticus and Alfred. Landon tended
               to have one foot in academia and one in industry (the former he
-              called "thinking" the latter "making things"). He taught math as a
+              called &ldquo;thinking&rdquo; the latter &ldquo;making things&rdquo;). He taught math as a
               university professor, and published numerous articles on topics in
               discrete mathematics and combinatorics (see his{" "}
-              <Link
-                to="/landon/research"
-                className="text-blue-500 hover:underline"
-              >
+              <Link to="/landon/research" className={linkCls}>
                 bibliography
               </Link>
               ). But he also co-founded a successful software company, worked as
@@ -232,181 +292,210 @@ const LandonMemorial = () => {
               remember, and to pay tribute to his life and work. See also
               <a
                 href="https://drive.google.com/file/d/1xblOZ9AsBylGa9GxF9s45rV20Fgba9JC/view?usp=sharing"
-                className="text-blue-500 hover:underline"
+                className={linkCls}
               >
                 {" "}
                 the preface{" "}
               </a>
               for a special issue of the journal Discrete Mathematics in honor
-              of Landon. And a notice from the American Mathematical Society
-              here.)
+              of Landon, and{" "}
+              <a
+                href="https://philpapers.org/archive/RABSII.pdf"
+                className={linkCls}
+              >
+                an introduction to that special issue (PDF)
+              </a>
+              . And a notice from the American Mathematical Society
+              here.) A short biography of his life and work appears on{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Landon_Rabern"
+                className={linkCls}
+              >
+                Wikipedia
+              </a>
+              .
             </p>
           </div>
-        </div>
+        </section>
 
-        <div>
-          {interleavedArray.map((item, index) =>
-            item.type === "photo" ? (
-              <div className="card bg-base-300  hover:bg-black m-4">
-                <div className="card-body">
-                  <img
-                    key={index}
-                    src={item.src}
-                    alt={index + 1}
-                    className="rounded-lg max-w-lg"
-                  />
-                </div>
-              </div>
-            ) : (
-              <MemoryCard key={index} memory={item} />
-            )
-          )}
-        </div>
-        {/* <div>
-          {photos.map((photo, index) => (
-            <img
-              key={index}
-              src={photo}
-              alt={`Photo ${index + 1}`}
-              className="rounded-md"
-            />
-          ))}
-        </div>
-        <div>
-          {memoryData.map((memory, index) => (
-            <MemoryCard key={index} memory={memory} />
-          ))}
-        </div> */}
+        {/* Memories — carousel; secondary stripe (graph-coloring theme) */}
+        <section
+          className={`${surface} p-5 sm:p-7 mb-10 border-l-2 border-l-secondary`}
+          aria-label="Memories from friends and colleagues"
+        >
+          <p className={eyebrowSecondary}>Memories</p>
+          <LandonMemoryCarousel items={memories} embedded />
+        </section>
 
-        <div className="card bg-info m-4">
-          <div className="card-body">
-            <p className="text-xl ml-4 font-bold text-black">
-              Landon's basic template for effective meditation
-            </p>
-            <ol className="text-lg ml-4 text-base-300">
-              <li> 1: focus on the breath</li>
-              <li> 2: smile and bring back focus when it strays </li>
-              <li> 3: smile at your self-loathing for failing to focus</li>
-              <li>
-                4: smile at your self-congratulation for succeeding to focus
-              </li>
-              <li>
-                5: smile at your self-loathing/self-congratulation for
-                failing/succeeding to smile at your failure/succeeding to smile
-                at your self-congratulation/self-loathing{" "}
-              </li>
-              <li>
-                6: continue to meta-smile until you forget what you were smiling
-                about{" "}
-              </li>
-              <li> 7: go back to the breath</li>
-            </ol>
-          </div>
-        </div>
-        <div className="card bg-warning m-4">
-          <div className="card-body">
-            <p className="text-xl ml-4 font-bold text-black">
-              A few of his most important articles in mathematics are the
-              following:
-            </p>
-            <ul className="text-lg ml-4 text-base-300 list-disc">
-              <li className="ml-4">
-                <a
-                  href="https://drive.google.com/file/d/1RUEwQBWq8M0FBAdJxTEN_oBs3rjRoiSM/view?usp=drive_link"
-                  className="hover:text-gray-600"
-                >
-                  “∆-Critical graphs with small high vertex cliques”
-                </a>
-                , Journal of Combinatorial Theory, 2012.
-              </li>
-              <li className="ml-4">
-                “Planar graphs are 9/2-colorable”, Journal of Combinatorial
-                Theory (2018) (with D. Cranston)
-              </li>
-              <li className="ml-4">
-                “Improved lower bounds on the number of edges in list critical
-                and online list critical graphs”, Journal of Combinatorial
-                Theory, 2020. (with H. Kierstead)
-              </li>
-            </ul>
-            <p className="text-lg ml-4 text-black font-bold">
-              He also published work in philosophical logic including these:
-            </p>
-            <ul className="text-lg ml-4 text-base-300 list-disc">
-              <li className="ml-4">
-                “A simple solution to the hardest logic puzzle ever”, Analysis,
-                2008.
-              </li>
-              <li className="ml-4">
-                "Dangerous reference graphs and semantic paradoxes", Journal of
-                Philosophical Logic, 2012.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="card bg-gray-300 m-4">
-          <div className="card-body">
-            <p className="text-lg ml-4 text-base-300">
-              {" "}
+        {/* Photographs — carousel; info stripe */}
+        <section
+          className={`${surface} p-5 sm:p-7 mb-10 border-l-2 border-l-info`}
+          aria-label="Photograph gallery"
+        >
+          <p className={eyebrowInfo}>Photographs</p>
+          <LandonPhotoCarousel photos={memorialPhotos} embedded />
+        </section>
+
+        {/* Meditation */}
+        <section className={`${surface} p-5 sm:p-7 mb-10 border-l-2 border-l-primary`}>
+          <p className={eyebrow}>Meditation</p>
+          <h2 className="text-base sm:text-lg font-semibold text-base-content m-0 mb-4 tracking-tight">
+            Landon&apos;s basic template for effective meditation
+          </h2>
+          <ol className="text-sm sm:text-[15px] text-base-content/88 list-decimal pl-5 sm:pl-6 space-y-2.5 m-0 marker:text-primary/80">
+            <li>focus on the breath</li>
+            <li>smile and bring back focus when it strays</li>
+            <li>smile at your self-loathing for failing to focus</li>
+            <li>
+              smile at your self-congratulation for succeeding to focus
+            </li>
+            <li>
+              smile at your self-loathing/self-congratulation for
+              failing/succeeding to smile at your failure/succeeding to smile
+              at your self-congratulation/self-loathing
+            </li>
+            <li>
+              continue to meta-smile until you forget what you were smiling
+              about
+            </li>
+            <li>go back to the breath</li>
+          </ol>
+        </section>
+
+        {/* Publications + Borodin–Kostochka (primer in expander) */}
+        <section
+          className={`${surface} p-5 sm:p-7 mb-10 border-l-2 border-l-warning`}
+          aria-label="Publications and mathematical background"
+        >
+          <p className={eyebrow}>Research</p>
+          <h2 className="text-base sm:text-lg font-semibold text-base-content/90 m-0 mb-4 tracking-tight">
+            A few of his most important articles in mathematics are the
+            following:
+          </h2>
+          <ul className="text-sm sm:text-[15px] text-base-content/88 list-disc pl-5 sm:pl-6 space-y-2.5 m-0 mb-6">
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1RUEwQBWq8M0FBAdJxTEN_oBs3rjRoiSM/view?usp=drive_link"
+                className={`${linkCls} text-info`}
+              >
+                &ldquo;∆-Critical graphs with small high vertex cliques&rdquo;
+              </a>
+              , Journal of Combinatorial Theory, 2012.
+            </li>
+            <li>
+              &ldquo;Planar graphs are 9/2-colorable&rdquo;, Journal of Combinatorial
+              Theory (2018) (with D. Cranston)
+            </li>
+            <li>
+              &ldquo;Improved lower bounds on the number of edges in list critical
+              and online list critical graphs&rdquo;, Journal of Combinatorial
+              Theory, 2020. (with H. Kierstead)
+            </li>
+          </ul>
+          <h3 className="text-sm sm:text-base font-semibold text-base-content m-0 mb-3">
+            He also published work in philosophical logic including these:
+          </h3>
+          <ul className="text-sm sm:text-[15px] text-base-content/88 list-disc pl-5 sm:pl-6 space-y-2.5 m-0 mb-8">
+            <li>
+              &ldquo;A simple solution to the hardest logic puzzle ever&rdquo;, Analysis,
+              2008.
+            </li>
+            <li>
+              &ldquo;Dangerous reference graphs and semantic paradoxes&rdquo;, Journal of
+              Philosophical Logic, 2012.
+            </li>
+          </ul>
+
+          <div className="border-t border-base-300 pt-6">
+            <h3 className="text-sm sm:text-base font-semibold text-base-content m-0 mb-2 tracking-tight">
+              Borodin–Kostochka conjecture
+            </h3>
+            <p className="text-sm sm:text-[15px] text-base-content/88 leading-[1.65] m-0 text-pretty mb-3">
               The mathematical problem that occupied him for many years was the
               Borodin-Kostochka conjecture, on which he wrote his PhD
-              dissertation. A "graph" is a collection of nodes, some of which
-              are connected by edges. Graph coloring assigns a color to each
-              node of a network so that any two nodes linked by an edge get
-              different colors. It is easy to find a graph coloring: simply give
-              each node its own color. Things get interesting when we ask how
-              few different colors we can use. If D denotes the maximum number
-              of nodes adjacent to any node in the graph, then it is simple to
-              find a coloring that uses at most D+1 colors. The clique number of
-              a graph is the largest size of a set of nodes that are pairwise
-              linked by edges. Each coloring must use at least as many colors as
-              the clique number, since all nodes in a clique must get distinct
-              colors. In 1941, Brooks showed that every graph has a coloring
-              with at most D colors, provided that D is at least 3, and that the
-              clique number of G is at most D. In 1977,{" "}
-              <a href="http://www.openproblemgarden.org/op/the_borodin_kostochka_conjecture">
-                {" "}
-                Borodin and Kostochka conjectured{" "}
-              </a>{" "}
-              that this upper bound could be improved: If G has maximum degree D
-              at least 9, and has clique number at most D-1, then G has a
-              coloring with at most D-1 colors. Landon helped prove various
-              partial results toward the conjecture.
+              dissertation.
             </p>
+            <details className="group rounded-xl border border-base-300 bg-base-300/20 open:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
+              <summary className="cursor-pointer list-none px-4 py-3 font-mono text-xs sm:text-sm text-primary hover:text-primary/85 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded-xl [&::-webkit-details-marker]:hidden flex items-center gap-2">
+                <span
+                  className="inline-block transition-transform group-open:rotate-90 text-primary/80"
+                  aria-hidden
+                >
+                  ▸
+                </span>
+                <span>
+                  Expand: primer on graph coloring &amp; the conjecture
+                </span>
+              </summary>
+              <div className="px-4 pb-4 pt-0 border-t border-base-300">
+                <div className="pt-4 flex flex-col gap-8">
+                  <p className="text-sm sm:text-[15px] text-base-content/88 leading-[1.65] m-0 text-pretty">
+                    A &ldquo;graph&rdquo; is a collection of nodes, some of which are
+                    connected by edges. Graph coloring assigns a color to each
+                    node of a network so that any two nodes linked by an edge get
+                    different colors. It is easy to find a graph coloring:
+                    simply give each node its own color. Things get interesting
+                    when we ask how few different colors we can use. If D denotes
+                    the maximum number of nodes adjacent to any node in the
+                    graph, then it is simple to find a coloring that uses at most
+                    D+1 colors. The clique number of a graph is the largest size
+                    of a set of nodes that are pairwise linked by edges. Each
+                    coloring must use at least as many colors as the clique
+                    number, since all nodes in a clique must get distinct colors.
+                    In 1941, Brooks showed that every graph has a coloring with
+                    at most D colors, provided that D is at least 3, and that the
+                    clique number of G is at most D. In 1977,{" "}
+                    <a
+                      href="http://www.openproblemgarden.org/op/the_borodin_kostochka_conjecture"
+                      className={linkCls}
+                    >
+                      Borodin and Kostochka conjectured
+                    </a>{" "}
+                    that this upper bound could be improved: If G has maximum
+                    degree D at least 9, and has clique number at most D-1, then
+                    G has a coloring with at most D-1 colors. Landon helped prove
+                    various partial results toward the conjecture.
+                  </p>
+                  <figure className="m-0 flex justify-center border-t border-base-300 pt-8">
+                    <img
+                      src={require("./assets/graph.png")}
+                      alt="Graph diagram: four nodes with distinct colors and connecting edges"
+                      className="rounded-xl max-w-[260px] w-full border border-base-300 bg-base-300/20"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </details>
           </div>
+        </section>
+        </div>
 
+        {/* Quote (camouflaged) + beach */}
+        <div className="border-t border-base-300 bg-base-200/20">
+        <div className={`${landonColumn} pt-10 pb-6 sm:pt-12 sm:pb-8`}>
+          <p className="landon-memorial-dream-quote text-center font-sans text-sm sm:text-[15px] leading-relaxed m-0 italic">
+            &ldquo;We are dissociated identities of mind-at-large in a shared
+            dream. When I die, I will rejoin the stream of Mind. My death is
+            just the dissolution of the dissociated complex of Mind that is
+            me. At least, that&apos;s the current idea I am playing with. I find
+            it useful to take on an idea for real, live it, and see how it
+            goes -- a kind of &lsquo;sandboxing&rsquo;.&rdquo;
+          </p>
+        </div>
+        <div
+          className={`${landonColumn} max-h-[min(32vh,18rem)] sm:max-h-[min(36vh,20rem)] overflow-hidden rounded-t-xl`}
+        >
           <img
-            src={require("./assets/graph.png")}
-            alt="graph"
-            className="rounded-lg max-w-sm"
+            src={lwr_beach}
+            alt=""
+            className="w-full h-full min-h-[10rem] sm:min-h-[11rem] object-cover object-[center_38%] opacity-95"
+          />
+          <div
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-base-100/80 via-transparent to-transparent"
+            aria-hidden="true"
           />
         </div>
-      </div>
-
-      <div className="bg-gray-100">
-        <div className="mb-2 px-4 bg-gray-100">
-          <div className="card bg-gray-300">
-            <div className="card-body">
-              <p className="text-center text-black"></p>
-            </div>
-          </div>
         </div>
-        <div className="mb-2 px-4 bg-gray-100">
-          <div className="card bg-gray-300">
-            <div className="card-body">
-              <p className="text-center text-gray-300">
-                "We are dissociated identities of mind-at-large in a shared
-                dream. When I die, I will rejoin the stream of Mind. My death is
-                just the dissolution of the dissociated complex of Mind that is
-                me. At least, that's the current idea I am playing with. I find
-                it useful to take on an idea for real, live it, and see how it
-                goes -- a kind of 'sandboxing'."{" "}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <img src={lwr_beach} alt="lwr_beach" className=" bg-gray-100 w-full" />
       </div>
     </main>
   );

@@ -1,137 +1,93 @@
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { SiGooglescholar } from "react-icons/si";
-import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
 import bdr21a from "./bdr21a.jpeg";
-import { themeChange } from "theme-change";
-import { useEffect } from "react";
-import Nav from "../components/Nav.jsx";
+import ActivityPanel from "../components/ActivityPanel.jsx";
 
 export default function Home() {
-  useEffect(() => {
-    themeChange(false);
-  }, []);
-  // useEffect(() => {
-  //   // set default theme on this page
-  //   localStorage.setItem("theme", "bumblebee");
-  // }, []);
   return (
-    <>
-      <main className="px-10">
-        <section>
-          <Nav> </Nav>
-          <div className="text-center p-10">
-            <h3 className="text-3xl text-secondary font-medium py-2">
-              <code className="h-10 flex items-center justify-center">
-                <Typewriter
-                  onInit={(typewriter) => {
-                    typewriter
-                      .typeString("01100010")
-                      .pauseFor(600)
-                      .deleteAll()
-                      .typeString("Brian Rabern")
-                      .start();
-                  }}
-                />
-              </code>
-            </h3>
-            <p className="mt-2 text-lg leading-8 text-accent">
-              I’m a software developer who enjoys logic puzzles, paradoxes,
-              problem-solving, and formal philosophy. In my spare time, I do
-              some writing and research. My tech interests include AI, virtual
-              reality, the semantic web, Python, and JavaScript/React. I also
-              like to do things outside.
-            </p>
-          </div>
+    <main className="pb-12" lang="en">
+      <div className="text-left pt-2 pb-6">
+        <h1 className="font-mono text-2xl uppercase tracking-[0.1em] mb-0 text-primary">
+          Brian Rabern
+        </h1>
+      </div>
 
-          <div className="flex relative bg-base-300 rounded-full w-62 h-40 overflow-hidden">
-            <img src={bdr21a} alt="Brian Rabern" />{" "}
-            <div className="px-10 text-3xl flex flex-wrap justify-center items-center gap-4 py-3 text-accent">
-              <a href="https://github.com/brianrabern">
-                <AiFillGithub className="hover:text-purple-500" />
+      <div className="console-panel overflow-hidden max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-[11rem_minmax(0,1fr)]">
+          <aside className="flex flex-row md:flex-col border-b md:border-b-0 md:border-r border-base-300 bg-base-200/25 shrink-0">
+            <img
+              src={bdr21a}
+              alt="Brian Rabern"
+              className="h-44 w-44 shrink-0 object-cover object-top md:h-auto md:w-full md:aspect-square"
+            />
+            <div className="flex flex-1 flex-row flex-wrap items-center justify-center gap-5 border-l border-base-300 px-4 py-3 text-2xl text-base-content/55 md:border-l-0 md:border-t md:px-3 md:py-3">
+              <a
+                href="https://github.com/brianrabern"
+                className="hover:text-secondary focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
+                aria-label="GitHub"
+              >
+                <AiFillGithub />
               </a>
-
-              <a href="https://linkedin.com/in/brian-rabern">
-                {" "}
-                <AiFillLinkedin className="hover:text-blue-500" />
+              <a
+                href="https://linkedin.com/in/brian-rabern"
+                className="hover:text-primary focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
+                aria-label="LinkedIn"
+              >
+                <AiFillLinkedin />
               </a>
-
-              {/* <a href="https://bsky.app/profile/rabern.bsky.social">
-                <SiBluesky className="hover:text-info" />
-              </a> */}
               <a
                 href="https://scholar.google.com/citations?user=vzRA2EMAAAAJ&hl=en"
-                className="hidden sm:block"
+                className="hover:text-success focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
+                aria-label="Google Scholar"
               >
-                <SiGooglescholar className="hover:text-green-500" />
+                <SiGooglescholar />
               </a>
             </div>
-          </div>
-        </section>
-        <section>
-          <div className="text-center p-10">
-            <p className="mt-2 leading-8 text-accent">
-              Formerly, I was a professor at the University of Edinburgh -- or,
-              officially a
+          </aside>
+          <div className="min-w-0 p-4 sm:p-6">
+            <p className="font-sans text-sm sm:text-base leading-relaxed text-base-content/65 m-0 text-justify hyphens-auto">
+              I'm a software engineer specializing in LLM integrations and AI
+              systems. Before moving into tech I spent a decade as a professor
+              at the University of Edinburgh — officially a{" "}
               <a
-                className="hover:text-secondary"
+                className="text-primary hover:underline focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
                 href="https://en.wikipedia.org/wiki/Reader_(academic_rank)"
               >
-                {" "}
                 Reader
               </a>
-              . I did my PhD at Australian National University, and my BA and MA
-              at University of Oregon and UC Boulder, respectively. You can see
-              my academic work{" "}
-              <Link className="hover:text-secondary" to="/research/">
-                here
-              </Link>
-              , my software projects{" "}
-              <Link className="hover:text-secondary" to="/coding/">
-                here
-              </Link>
-              , and my talks/teaching{" "}
-              <Link className="hover:text-secondary" to="/talking/">
-                here
-              </Link>
-              . My software resume is{" "}
-              <Link className="hover:text-info" to="/coding/resume/">
-                here
-              </Link>{" "}
-              and my academic CV is{" "}
-              <a
-                className="hover:text-info"
-                href="https://drive.google.com/file/d/1mXvjire6pXGe270VLhglVQ-Pk3gVr77u/view?usp=sharing"
-              >
-                here
-              </a>
-              .
+              — where I published on logic, formal semantics, and philosophy.
+              When time permits I still do research at the intersection of
+              logic, philosophy, and AI, and am slowly working on a book about
+              my favorite puzzles and paradoxes. I did my PhD at Australian
+              National University and my BA and MA at University of Oregon and
+              UC Boulder, respectively. When not in front of a computer, I enjoy
+              yoga, hiking, camping, kayaking, and generally getting out into
+              the mountains, rivers, and lakes of Oregon.
             </p>
-            <br />
-            <div className="mr-4 mb-1 text-center text-secondary">
-              <a
-                className=" hover:text-primary"
-                href="https://drive.google.com/file/d/1mXvjire6pXGe270VLhglVQ-Pk3gVr77u/view?usp=sharing"
+            <div className="mt-6 flex flex-wrap gap-2 text-left">
+              <Link
+                to="/cv"
+                aria-label="CV"
+                className="font-mono text-[11px] normal-case tracking-normal px-3 py-2 rounded border border-base-300 text-base-content/80 hover:border-primary/50 hover:text-primary focus:outline-none focus-visible:ring-1 focus-visible:ring-primary"
               >
-                <div className="badge hover:badge-secondary hover:text-black ">
-                  curriculum vitae
-                </div>
-              </a>
+                cv
+              </Link>
+              <Link
+                to="/resume"
+                aria-label="Resume"
+                className="font-mono text-[11px] normal-case tracking-normal px-3 py-2 rounded border border-base-300 text-base-content/80 hover:border-secondary/50 hover:text-secondary focus:outline-none focus-visible:ring-1 focus-visible:ring-primary"
+              >
+                resume
+              </Link>
             </div>
           </div>
-        </section>
-      </main>
-      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
-        <div>
-          <p>© 2023 rabern - brian.rabern@gmail.com</p>
-          <p className="text-gray-600">
-            <Link to="/landon/memorial/">
-              {" "}
-              In Memoriam: Landon Rabern (1981-2020)
-            </Link>
-          </p>
         </div>
-      </footer>
-    </>
+      </div>
+
+      <div className="mt-10 max-w-7xl">
+        <ActivityPanel />
+      </div>
+    </main>
   );
 }

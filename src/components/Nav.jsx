@@ -1,141 +1,116 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
+import { FiMoon, FiSun } from "react-icons/fi";
 
-export default function Nav() {
+const tabs = [
+  { to: "/", end: true, label: "home" },
+  { to: "/research", label: "research" },
+  { to: "/coding", label: "coding" },
+  { to: "/talking", label: "talking" },
+];
+
+/** Matches primary nav sections (nested routes use the parent tab). */
+function lambdaParamFromPath(pathname) {
+  if (!pathname || pathname === "/") return "home";
+  if (pathname.startsWith("/research")) return "research";
+  if (pathname.startsWith("/coding")) return "coding";
+  if (pathname.startsWith("/talking")) return "talking";
+  return "home";
+}
+
+export default function Nav({ highContrast, onToggleHighContrast }) {
+  const { pathname } = useLocation();
+  const param = lambdaParamFromPath(pathname);
+  const tabBar = highContrast
+    ? "bg-base-200/70"
+    : "bg-base-200/55";
+
+  const tabBase =
+    "font-mono text-[11px] sm:text-xs px-2.5 sm:px-3 py-2 sm:py-2.5 rounded-t-md border border-transparent border-b-0 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:ring-offset-0 focus-visible:ring-offset-base-200";
+
+  const navLinkClass = ({ isActive }) => {
+    if (isActive) {
+      return `${tabBase} bg-base-100 text-primary border-base-300 border-b-base-100 -mb-px z-[1]`;
+    }
+    return `${tabBase} text-base-content/50 hover:text-base-content/85 hover:bg-base-100/35`;
+  };
+
+  const headerBorder = highContrast
+    ? "border-b border-base-300"
+    : "border-b border-base-300/90";
+  const iconBtn = highContrast
+    ? "self-start sm:self-auto h-9 w-9 inline-flex items-center justify-center rounded border border-base-300 text-base-content/90 hover:bg-base-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary shrink-0"
+    : "self-start sm:self-auto h-9 w-9 inline-flex items-center justify-center rounded border border-base-300 text-base-content/55 hover:text-base-content hover:border-primary/40 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary shrink-0";
+
   return (
-    <nav className="py-8 mb-12 flex justify-between items-center">
-      <div className="tooltip" data-tip="mood?">
-        <ul className="menu justify-end">
-          <li>
-            {" "}
-            <input
-              data-set-theme="business"
-              data-act-class="ACTIVECLASS"
-              type="radio"
-              name="theme"
-              className="radio"
-              id="business-radio"
-            />
-            {/* <input
-              data-set-theme="coffee"
-              data-act-class="ACTIVECLASS"
-              type="radio"
-              name="theme"
-              className="radio"
-            /> */}
-            <input
-              data-set-theme="dark"
-              data-act-class="ACTIVECLASS"
-              type="radio"
-              name="theme"
-              className="radio"
-            />
-            {/* <input
-              data-set-theme="black"
-              data-act-class="ACTIVECLASS"
-              type="radio"
-              name="theme"
-              className="radio"
-            /> */}
-            <input
-              data-set-theme="cyberpunk"
-              data-act-class="ACTIVECLASS"
-              type="radio"
-              name="theme"
-              className="radio"
-            />
-            <input
-              data-set-theme="bumblebee"
-              data-act-class="ACTIVECLASS"
-              type="radio"
-              name="theme"
-              className="radio"
-            />
-          </li>
-        </ul>{" "}
+    <header className={`mb-8 sm:mb-10 pb-0 ${headerBorder}`}>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between pb-3">
+        <div className="min-w-0 flex-1">
+          <p
+            className="font-mono text-[13px] sm:text-sm leading-relaxed select-none m-0"
+            aria-label={
+              param === "home"
+                ? "lambda x: brianrabern(x)"
+                : `lambda x: brianrabern(x). Current section: ${param}`
+            }
+          >
+            <span className="text-secondary">lambda</span>{" "}
+            <span className="text-info">x</span>
+            <span className="text-base-content/80">:</span>{" "}
+            <Link
+              to="/"
+              className="text-accent hover:text-accent/90 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded uppercase tracking-[0.12em]"
+              title="Home"
+            >
+              Brian Rabern
+            </Link>
+            <span className="text-base-content/80">(</span>
+            <span className="text-info">x</span>
+            <span className="text-base-content/80">)</span>
+            {param !== "home" ? (
+              <>
+                {" "}
+                <span
+                  className={
+                    highContrast
+                      ? "text-base-content/70"
+                      : "text-base-content/45"
+                  }
+                  aria-hidden="true"
+                >
+                  # {param}
+                </span>
+              </>
+            ) : null}
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onToggleHighContrast}
+          className={iconBtn}
+          aria-pressed={highContrast}
+          aria-label={highContrast ? "Switch to light mode" : "Switch to dark mode"}
+          title={highContrast ? "Light mode" : "Dark mode"}
+        >
+          {highContrast ? <FiSun aria-hidden /> : <FiMoon aria-hidden />}
+        </button>
       </div>
 
-      <ul className="menu menu-horizontal bg-base-100 rounded-box">
-        <li>
-          <div className="tooltip" data-tip="home">
-            <Link to="/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
-            </Link>
-          </div>
-        </li>
-        <li>
-          <div className="tooltip" data-tip="writing">
-            <Link to="/research/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
-                />
-              </svg>
-            </Link>
-          </div>
-        </li>
-        <li>
-          <div className="tooltip" data-tip="coding">
-            <Link to="/coding/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"
-                />
-              </svg>
-            </Link>
-          </div>
-        </li>
-        <li>
-          <div className="tooltip" data-tip="talking">
-            <Link to="/talking/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"
-                />
-              </svg>
-            </Link>
-          </div>
-        </li>
-      </ul>
-    </nav>
+      <nav
+        className={`flex flex-wrap items-end gap-0 rounded-t-lg ${tabBar}`}
+        aria-label="Primary"
+      >
+        {tabs.map(({ to, end, label }) => (
+          <NavLink
+            key={to}
+            to={to}
+            end={end}
+            className={navLinkClass}
+            title={`${label.charAt(0).toUpperCase()}${label.slice(1)}`}
+          >
+            {label}
+          </NavLink>
+        ))}
+      </nav>
+    </header>
   );
 }
