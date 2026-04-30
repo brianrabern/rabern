@@ -47,9 +47,9 @@ export default function Home() {
           </aside>
           <div className="min-w-0 p-4 sm:p-6">
             <p className="font-sans text-sm sm:text-base leading-relaxed text-base-content/65 m-0 text-justify hyphens-auto">
-              I'm a software engineer specializing in LLM integrations and AI
-              systems. Before moving into tech I spent a decade as a professor
-              at the University of Edinburgh — officially a{" "}
+              I'm a software engineer focused on backend systems and AI
+              integrations. Before moving into tech I spent a decade as a
+              professor at the University of Edinburgh — officially a{" "}
               <a
                 className="text-primary hover:underline focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
                 href="https://en.wikipedia.org/wiki/Reader_(academic_rank)"
