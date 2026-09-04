@@ -1,14 +1,46 @@
 const brianPublicationsData = [
   {
-    year: "forthcoming",
+    year: "2026",
+    title:
+      "LogicSkills: A Structured Benchmark for Formal Reasoning in Large Language Models",
+    booktitle:
+      "Findings of the Association for Computational Linguistics: EMNLP 2026",
+    publisher: "Association for Computational Linguistics",
+    author: "Brian Rabern and Philipp Mondorf and Barbara Plank",
+    ENTRYTYPE: "inproceedings",
+    ID: "rabern2026logicskills",
+    bibtex:
+      "@inproceedings{rabern2026logicskills,\n\ttitle = {LogicSkills: A Structured Benchmark for Formal Reasoning in Large Language Models},\n\tauthor = {Brian Rabern and Philipp Mondorf and Barbara Plank},\n\tbooktitle = {Findings of the Association for Computational Linguistics: EMNLP 2026},\n\tyear = {2026},\n\tpublisher = {Association for Computational Linguistics},\n\turl = {https://arxiv.org/abs/2602.06533}\n}\n",
+    url: "https://arxiv.org/abs/2602.06533",
+  },
+  {
+    year: "2026",
+    title:
+      "A benchmark of expert-level academic questions to assess AI capabilities",
+    journal: "Nature",
+    volume: "649",
+    pages: "1139--1146",
+    doi: "10.1038/s41586-025-09962-4",
+    author: "HLE Contributors Consortium",
+    ENTRYTYPE: "article",
+    ID: "Phan2026-HLE",
+    bibtex:
+      "@article{Phan2026-HLE,\n\tauthor = {{HLE Contributors Consortium}},\n\tjournal = {Nature},\n\tpages = {1139--1146},\n\ttitle = {A benchmark of expert-level academic questions to assess AI capabilities},\n\tvolume = {649},\n\tyear = {2026},\n\tdoi = {10.1038/s41586-025-09962-4}\n}\n",
+    url: "https://doi.org/10.1038/s41586-025-09962-4",
+  },
+  {
+    year: "2026",
     title: "A Compositional Semantics for Venn Diagrams",
     journal: "Linguistics and Philosophy",
+    volume: "49",
+    pages: "365--403",
+    doi: "10.1007/s10988-026-09461-3",
     author: "Bryan Pickel and Brian Rabern",
     ENTRYTYPE: "article",
-    ID: "PickelForthcoming-PICACS",
+    ID: "Pickel2026-PICACS",
     bibtex:
-      "@article{PickelForthcoming-PICACS,\n\tauthor = {Bryan Pickel and Brian Rabern},\n\tjournal = {Linguistics and Philosophy},\n\ttitle = {A Compositional Semantics for Venn Diagrams},\n\tyear = {forthcoming}\n}\n",
-    url: "https://scholar.google.com/scholar?q=A%20Compositional%20Semantics%20for%20Venn%20Diagrams",
+      "@article{Pickel2026-PICACS,\n\tauthor = {Bryan Pickel and Brian Rabern},\n\tjournal = {Linguistics and Philosophy},\n\tpages = {365--403},\n\ttitle = {A Compositional Semantics for Venn Diagrams},\n\tvolume = {49},\n\tyear = {2026},\n\tdoi = {10.1007/s10988-026-09461-3}\n}\n",
+    url: "https://doi.org/10.1007/s10988-026-09461-3",
   },
   {
     year: "forthcoming",

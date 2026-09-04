@@ -1,5 +1,11 @@
 const talkData = [
   {
+    title: "Your Digital Twin and Rational Choice",
+    event: "Deschutes Tech Guild",
+    location: "Bend, OR",
+    date: "May 2026",
+  },
+  {
     title: "Operators and Relativisms",
     event: "Syntactic Arguments in the Contextualism/Relativism Debate",
     location: "University of Warsaw",

@@ -1,23 +1,35 @@
 {
-  "updatedAt": "2026-04-22T12:00:00.000Z",
+  "updatedAt": "2026-09-04T12:00:00.000Z",
   "items": [
     {
+      "kind": "paper",
+      "summary": "LogicSkills accepted at Findings of EMNLP 2026 (Budapest).",
+      "href": "https://arxiv.org/abs/2602.06533",
+      "date": "2026-10"
+    },
+    {
+      "kind": "code",
+      "summary": "A Lean proof of Brooks' theorem.",
+      "href": "https://github.com/brianrabern/BrooksLean",
+      "date": "2026-09"
+    },
+    {
+      "kind": "paper",
+      "summary": "\"A Compositional Semantics for Venn Diagrams,\" Linguistics and Philosophy 49: 365–403 (2026).",
+      "href": "https://doi.org/10.1007/s10988-026-09461-3",
+      "date": "2026-06"
+    },
+    {
+      "kind": "paper",
+      "summary": "Forthcoming: \"Variabilism in Light of Naming and Necessity,\" in 50 Years of Naming and Necessity (OUP, with A. J. Schoubye).",
+      "href": "https://philpapers.org/rec/SCHVIL-2",
+      "date": "2026-01"
+    },
+    {
       "kind": "talk",
-      "summary": "Upcoming talk at Deschutes Tech Guild: \"Your Digital Twin and Rational Choice.\"",
+      "summary": "Talk at Deschutes Tech Guild: \"Your Digital Twin and Rational Choice.\"",
       "href": "https://www.meetup.com/deschutes-tech-guild/",
       "date": "2026-05"
-    },
-    {
-      "kind": "paper",
-      "summary": "Forthcoming: \"A Compositional Semantics for Venn Diagrams\" (Linguistics and Philosophy).",
-      "href": "https://philpapers.org/rec/PICACS",
-      "date": "2026-04"
-    },
-    {
-      "kind": "paper",
-      "summary": "LogicSkills: A Structured Benchmark for Formal Reasoning in Large Language Models (draft on arXiv).",
-      "href": "https://arxiv.org/abs/2602.06533",
-      "date": "2026-02"
     },
     {
       "kind": "paper",

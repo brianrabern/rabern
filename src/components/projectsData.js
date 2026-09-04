@@ -69,7 +69,7 @@ const projectsData = [
       "A web-based application for teaching the syntax and semantics of first-order logic with multiple exersices and automatic grading.",
     tech: ["Typescript", "React", "Tailwind", "Firebase"],
     img: "https://raw.githubusercontent.com/brianrabern/rabern/main/src/pages/assets/elogic.png",
-    link: "https://info.elogic.land/",
+    link: "https://elogic.land/",
     github: "",
   },
   {

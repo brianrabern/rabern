@@ -216,6 +216,40 @@ const Resume = () => {
           </div>
         </section>
 
+        <section className="mb-10">
+          <h2 className={sectionTitle}>Selected publications</h2>
+          <ul className={bullets}>
+            <li className={bulletItem}>
+              <strong className="text-base-content/85">
+                LogicSkills: A Structured Benchmark for Formal Reasoning in
+                Large Language Models.
+              </strong>{" "}
+              <em>Findings of ACL: EMNLP</em>, 2026.{" "}
+              <span className="text-base-content/50">
+                with P. Mondorf, B. Plank
+              </span>
+            </li>
+            <li className={bulletItem}>
+              <strong className="text-base-content/85">
+                A benchmark of expert-level academic questions to assess AI
+                capabilities
+              </strong>{" "}
+              (Humanity&apos;s Last Exam). <em>Nature</em>, 2026, 649:
+              1139–1146.{" "}
+              <span className="text-base-content/50">
+                HLE Contributors Consortium; contributed logic questions
+              </span>
+            </li>
+            <li className={bulletItem}>
+              <strong className="text-base-content/85">
+                A simple solution to the hardest logic puzzle ever.
+              </strong>{" "}
+              <em>Analysis</em>, 2008, 68(298): 105–112.{" "}
+              <span className="text-base-content/50">with L. Rabern</span>
+            </li>
+          </ul>
+        </section>
+
         <section>
           <h2 className={sectionTitle}>Education</h2>
           <div className={jobBlock}>

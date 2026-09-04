@@ -11,6 +11,20 @@ const featured = [
     github: "https://github.com/brianrabern/LogicSkills",
   },
   {
+    title: "pyroboros",
+    blurb:
+      "A Python compiler, written in Python, that compiles Python into Python.",
+    tags: ["Python"],
+    github: "https://github.com/brianrabern/pyroboros",
+  },
+  {
+    title: "LingLens",
+    blurb:
+      "A modular engine that breaks sentence acceptability into syntax, felicity, and processing strain, scored by independent LLM judges and combined by a rule-based meta-judge.",
+    tags: ["Python", "LLM"],
+    github: "https://github.com/brianrabern/ling_lens",
+  },
+  {
     title: "symbolify_it",
     blurb: "Interactive symbolization exercises (predicate + propositional logic).",
     tags: ["TypeScript", "React", "Z3"],
@@ -26,9 +40,11 @@ const featured = [
   },
   {
     title: "graph-num",
-    blurb: "Graph number playground.",
+    blurb:
+      "A number is a complex combinatorial object that forgot everything about its structure.",
     tags: ["web"],
     live: "https://graph-num.vercel.app/",
+    github: "https://github.com/brianrabern/graph-num",
   },
   {
     title: "tractatusSky",
@@ -41,8 +57,7 @@ const featured = [
     title: "∃Logic",
     blurb: "Web app for teaching first-order logic exercises with autograding.",
     tags: ["TypeScript", "React", "Firebase"],
-    live: "https://info.elogic.land/",
-    github: "https://github.com/brianrabern/elogic",
+    live: "https://elogic.land/",
   },
   {
     title: "philfacts bot",
